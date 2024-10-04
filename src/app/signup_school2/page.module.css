@@ -1,3 +1,49 @@
+.formSection {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.title {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top:-15px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6b7384;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-check {
+  margin-top: 10px;
+}
+
+
+.divider {
+  text-align: center;
+  color: #6b7384;
+  margin: 20px 0;
+  font-size: 14px;
+}
+.iconContainer {
+  display: grid;
+  grid-template-columns: 35% 45%;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .gridContainer {
   display: grid;
   grid-template-columns: 35% 45%;
@@ -12,7 +58,7 @@
 }
 
 .imageContainer {
-  background-image: url('../app/images/signup.png');
+  background-image: url('../images/signup.png');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -55,3 +101,4 @@
   display: flex;
   justify-content: center;
 }
+
