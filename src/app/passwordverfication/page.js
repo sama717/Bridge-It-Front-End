@@ -22,6 +22,9 @@ export default function Verfiction(){
              Back to login
                 </Button>
           </Link>
+          <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
+                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
+                    </div>
         </form>
       </div>
       <div className={styles.imageContainer}>

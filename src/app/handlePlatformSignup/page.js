@@ -1,17 +1,23 @@
 "use client";
 import styles from '../page.module.css'; 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
-import { useDispatch } from 'react-redux'; 
-import { setEmail } from '../store/authSlice';
 import { useRouter } from 'next/navigation';
-export default function ForgetPassword() {
-  const dispatch = useDispatch(); 
+
+export default function HandlePlatformSignup() {
   const router = useRouter(); 
   const [formData, setFormData] = useState({
-    email: ''
+    password: ''
   });
+  // const [error, setError] = useState(null);  
+
+  // useEffect(() => {
+  //   const queryError = new URLSearchParams(window.location.search).get('error');
+  //   if (queryError === "NeedToEnterPassword") {
+  //     setError('You need to enter your password to complete the registration.');
+  //   }
+  // }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,8 +28,8 @@ export default function ForgetPassword() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setEmail(formData.email)); 
-    router.push('/forgetPassword'); 
+    console.log("Entered password:", formData.password);
+    router.push('/dashbord');  
   };
 
   return (
@@ -31,25 +37,25 @@ export default function ForgetPassword() {
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
           <form onSubmit={handleSubmit}>
-            <p className='fw-bold fs-6 ' style={{ marginTop: "120px" }}>You forgot your password</p>
-            <p  style={{ fontSize: ".7rem", fontWeight: "bold", color: "rgba(128, 128, 128,.9)" }}>
-              To get you back to your account write your
+            {/* {error && <p className='fw-bold fs-6' style={{ marginTop: "120px", color: "red" }}>{error}</p>} */}
+            <p className='fw-bold fs-6' style={{ marginTop: "120px" }}>You already have an account</p>
+            <p style={{ fontSize: ".7rem", fontWeight: "bold", color: "rgba(128, 128, 128,.9)" }}>
+              To get you back to your account, write your password to log in.
             </p>
-            <p  style={{ fontSize: ".7rem", fontWeight: "bold", color: "rgba(128, 128, 128,.9)",marginTop:"-10px" }}> email to send you the link</p>
-            <div style={{ marginBottom: "30px", marginTop: "10px" }}>
-              <span style={{ color: "#000", fontWeight: "bold", fontSize: ".7rem", marginBottom: "70px" }}>Did you remember your password? </span>
+            <div style={{ marginBottom: "30px", marginTop: "30px" }}>
+              <span style={{ color: "#000", fontWeight: "bold", fontSize: ".9rem", marginBottom: "70px" }}>Did you remember your password? </span>
               <Link href="./login" style={{ textDecoration: "underline", fontWeight: "bold", color: "#0b56a4", fontSize: ".9rem" }}>
                 Log in
               </Link>
             </div>
-            <div className="form-group email">
-              <label>Email</label>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
               <input
-                type="email"
-                name="email"
+                type="password"
+                name="password"
                 className="form-control"
-                placeholder="Enter your email"
-                value={formData.email}
+                placeholder="Enter your password"
+                value={formData.password}
                 onChange={handleChange}
                 required
               />
@@ -57,7 +63,6 @@ export default function ForgetPassword() {
             <Button type="submit" className="mt-3 submit">
               Next
             </Button>
-
             <div style={{ marginBottom: "30px" }}>
               <span style={{ color: "rgba(0,0,0,.8)", fontWeight: "bold", fontSize: ".8rem", marginBottom: "70px" }}>Are you facing any problem? </span>
               <Link href="#" style={{ textDecoration: "underline", fontWeight: "bold", color: "#0b56a4", fontSize: ".8rem" }}>
@@ -65,10 +70,9 @@ export default function ForgetPassword() {
               </Link>
             </div>
             <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
+                     <img src="copyrights.png" style={{ height: "12px"}}/>
                     </div>
           </form>
-
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.overlay}>

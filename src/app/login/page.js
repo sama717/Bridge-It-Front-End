@@ -1,6 +1,6 @@
 // src/app/login/page.js
 "use client";
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/authCopmonets/LoginForm';
 
 import styles from '../page.module.css';
 

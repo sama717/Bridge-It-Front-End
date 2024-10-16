@@ -10,7 +10,7 @@ export default function WhatsAppCheckbox({ checked, onChange }) {
           checked={checked}
           onChange={onChange}
         />
-        <label htmlFor="whatsappCheck" className="form-check-label">
+        <label htmlFor="whatsappCheck" className="form-check-label" style={{fontSize:"12px",color:"#000000B2"}}>
           Same as WhatsApp number
         </label>
       </div>

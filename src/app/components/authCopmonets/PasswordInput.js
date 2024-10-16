@@ -12,7 +12,7 @@ export default function PasswordInput({ value, onChange }) {
           onChange={onChange}
           required
         />
-        <p className="text-muted" style={{fontSize:"10px",color:"#787e8a",marginTop:"-10px"}}>
+        <p className="text-muted" style={{fontSize:"10px",color:"#787e8a"}}>
           Use 8 characters or more with a mix of letters, numbers, and symbols.
         </p>
         

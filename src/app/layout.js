@@ -1,10 +1,10 @@
-"use client"; // Ensure this is the first line
+"use client"; 
 // import localFont from "next/font/local";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store/page'; // Adjust this path according to your structure
+import store from './store/page'; 
 
 export default function RootLayout({ children }) {
   return (

@@ -1,11 +1,12 @@
 
-  .iconContainer{
-    display: grid;
-    grid-template-columns: 35% 45%;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-  
+.iconContainer {
+  display: grid;
+  grid-template-columns: 35% 55%; /* Adjusted second column to allow more room */
+  justify-content: center;
+  margin-bottom: 50px;
+  column-gap: 4em; 
+}
+
   .schoollink {
     position: relative; 
     display: inline-block; 
@@ -23,20 +24,23 @@
   .words{
      margin-top: '8px' ;
       color:"#565f6d" ;
-       font-weight:"bolder" 
+       font-weight:"bolder" ;
   }
- 
+
   .gridContainer {
     display: grid;
     grid-template-columns: 35% 45%;
-    height: 100vh;
+    height: 100vh; 
     justify-content: center;
   }
-  
   .formContainer {
     background-color: white;
-    padding: 60px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%; 
+    width: 100%;
   }
   
   .imageContainer {
@@ -44,6 +48,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    height: 100%; 
   }
   
   .overlay {
@@ -54,30 +59,27 @@
     height: 100%;
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7));
     display: flex;
-    justify-content: left;
-    align-items: flex-end;
+    align-items:flex-end;
   }
+  
   .logoContainer {
     position: absolute;
     top: 20px; 
     right: 20px; 
   }
+  
   .logo {
-    width: 100px; 
+    width: 80px; 
     height: auto;
   }
   
   .overlayText {
     display: flex;
     color: white;
-    font-size: 24px;
-    margin-left: 10px;
-    margin-bottom: 5px;
+    font-size: 20px; 
+    justify-content: flex-end;
+    padding: 10px; 
   }
   
-  .imagec {
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-  }
+
   

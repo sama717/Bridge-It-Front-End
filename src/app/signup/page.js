@@ -1,6 +1,6 @@
 "use client";
 import styles from '../page.module.css';
-import SignUpForm from '../components/SignUpForm';
+import SignUpForm from '../components/authCopmonets/SignUpForm';
 import { Provider } from 'react-redux';
 import store from '../store/page'; 
 

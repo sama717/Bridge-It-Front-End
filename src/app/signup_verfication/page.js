@@ -12,16 +12,19 @@ export default function Verfiction(){
           <div className={styles.imagec}>
             <img style={{marginTop:"50px"}} src='correct.png'/>
           </div>
-          <div className='fw-bold '  style={{textAlign:"center",fontSize:"15px"}}>
+          <div className='fw-bold '  style={{textAlign:"center",fontSize:"12px"}}>
             Your account has been created successfully check your Gmail
           </div>
-          <p className='mt-3' >start your journey now,What you are waitig for!</p>
+          <p className='mt-3' style={{fontSize:"14px",textAlign:"center"}} >start your journey now,What you are waitig for!</p>
           <Link href="#">
           <Button className='mt-5'
                   style={{ backgroundColor: "#0652a2", width: "100%", fontWeight: "bolder",}} >
                   Take me home
                 </Button>
           </Link>
+          <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
+                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-10px"}}/>
+                    </div>
         </form>
       </div>
       <div className={styles.imageContainer}>
