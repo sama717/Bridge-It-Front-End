@@ -198,6 +198,11 @@
 
 @media screen and (max-width: 640px) {
 
+    .about-sec-2 h2{
+        width: 25ch;
+        font-size: 2rem;
+    }
+
     .main-text{
         position: absolute;
         top: 28%;
@@ -239,6 +244,11 @@
 }
 
 @media screen and (max-width: 530px) {
+    .about-sec-2 h2{
+        width: 18ch;
+        font-size: 2rem;
+    }
+    
 
     .main-text{
         position: absolute;
@@ -300,11 +310,22 @@
         border-radius: 16px;
         font-size: 1.5rem;
     }
+
+    .grid-container .box h4{
+        font-size: 1.156rem;
+    }
+    
+    .grid-container .box img{
+        margin-right: 1em;
+    }
+
+    .grid-container .box p{
+        font-size: 0.889rem;
+    }
     
 }
 
 @media screen and (max-width: 435px) {
-
     .main-text{
         position: absolute;
         top: 28%;
@@ -383,17 +404,5 @@
         font-size: 1rem;
         width: 25ch;
         margin-bottom: 1em;
-    }
-
-    .grid-container .box h4{
-        font-size: 1.156rem;
-    }
-    
-    .grid-container .box img{
-        margin-right: 1em;
-    }
-
-    .grid-container .box p{
-        font-size: 0.889rem;
     }
 }
