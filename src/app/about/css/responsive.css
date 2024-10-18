@@ -1,0 +1,399 @@
+@media  screen and (max-width: 1199px) {
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 65%;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.5rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.33rem;
+        width: 60ch;
+        margin-bottom: 1em;
+    }
+    
+}
+
+@media screen and (max-width: 1010px) {
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.5rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.5rem;
+        width: 50ch;
+        margin-bottom: 1em;
+    }
+    
+    
+}
+
+@media (max-width: 991px) {
+    .grid-container .grid-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+@media  screen and (max-width: 950px) {
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.4rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.4rem;
+        width: 45ch;
+        margin-bottom: 1em;
+    } 
+}
+
+@media screen and (max-width:880px ){
+    .bottom-sec-2 h4{
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+    
+    .bottom-sec-2 p{
+        font-size: 1.125rem;
+        font-weight: 300;
+        width: 55ch;
+    }
+    
+    .start-2-btn{
+        width: 190px;
+        min-width: 129px;
+        background-color: #004EA0 !important;
+        color: #FFF;
+        width: 286px;
+        height: 72px;
+        border: none;
+        border-radius: 16px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:800px){
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.3rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.3rem;
+        width: 45ch;
+        margin-bottom: 1em;
+    }
+
+}
+
+@media screen and (max-width: 759px) {
+    .main-text{
+        position: absolute;
+        top: 28%;
+    }
+    
+    .main-text h1 {
+        font-size: 3rem;
+    }
+
+    .main-text h2{
+        margin-top: 0.5em;
+        font-size: 2rem ;
+        width: 30ch;
+    }
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.4rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.4rem;
+        width: 35ch;
+        margin-bottom: 1em;
+    }
+
+    .bottom-sec-2 h4{
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+    
+    .bottom-sec-2 p{
+        font-size: 1.125rem;
+        font-weight: 300;
+        width: 40ch;
+    }
+    
+    .start-2-btn{
+        width: 190px;
+        min-width: 129px;
+        background-color: #004EA0 !important;
+        color: #FFF;
+        width: 286px;
+        height: 72px;
+        border: none;
+        border-radius: 16px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .main-text{
+        position: absolute;
+        top: 28%;
+    }
+    
+    .main-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .main-text h2{
+        margin-top: 0.5em;
+        font-size: 1.8rem ;
+        width: 28ch;
+    }
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.2rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.2rem;
+        width: 35ch;
+        margin-bottom: 1em;
+    }
+    
+    
+}
+
+@media screen and (max-width: 530px) {
+
+    .main-text{
+        position: absolute;
+        top: 30%;
+    }
+    
+    .main-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-text h2{
+        margin-top: 0.5em;
+        font-size: 1.5rem ;
+        width: 27ch;
+    }
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2.2rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1.2rem;
+        width: 28ch;
+        margin-bottom: 1em;
+    }
+    
+    .bottom-sec-2 h4{
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .bottom-sec-2 p{
+        font-size: 1.125rem;
+        font-weight: 300;
+        width: 38ch;
+        font-size: 0.8rem;
+    }
+    
+    .start-2-btn{
+        width: 190px;
+        min-width: 129px;
+        background-color: #004EA0 !important;
+        color: #FFF;
+        width: 286px;
+        height: 72px;
+        border: none;
+        border-radius: 16px;
+        font-size: 1.5rem;
+    }
+    
+}
+
+@media screen and (max-width: 435px) {
+
+    .main-text{
+        position: absolute;
+        top: 28%;
+    }
+    
+    .main-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .main-text h2{
+        margin-top: 0.5em;
+        font-size: 1.3rem ;
+        width: 26ch;
+    }
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1rem;
+        width: 30ch;
+        margin-bottom: 1em;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 390px) {
+
+    .main-text{
+        position: absolute;
+        top: 35%;
+    }
+    
+    .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .main-text h2{
+        margin-top: 0.5em;
+        font-size: 1.25rem ;
+        width: 25ch;
+    }
+
+    .about-secondary{
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .head-text{
+        width: 15%;
+        min-width: 200px;
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .paragraph-text p{
+        font-size: 1rem;
+        width: 25ch;
+        margin-bottom: 1em;
+    }
+
+    .grid-container .box h4{
+        font-size: 1.156rem;
+    }
+    
+    .grid-container .box img{
+        margin-right: 1em;
+    }
+
+    .grid-container .box p{
+        font-size: 0.889rem;
+    }
+}

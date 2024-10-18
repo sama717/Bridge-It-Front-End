@@ -26,7 +26,7 @@ export default function Home() {
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
           <form style={{ width: "70%" }}>
-            <h5 style={{marginTop:"60px"}} className="fw-bold">New account</h5>
+            <h5 style={{marginTop:"60px"}} className="fw-bold text-dark">New account</h5>
             <p style={{fontWeight:"bolder", color:"#4b5563", marginBottom:"30px",fontSize:"14px"}}>Start your journey from here</p>
             <p className="fw-bold text-dark " style={{fontSize:"14px"}}>
               Already have an account?{' '}

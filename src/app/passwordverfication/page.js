@@ -12,7 +12,7 @@ export default function Verfiction(){
           <div className={styles.imagec}>
             <img style={{marginTop:"50px"}} src='correct.png'/>
           </div>
-          <div className='fw-bold '  style={{textAlign:"center",fontSize:"14px"}}>
+          <div className='fw-bold text-dark mt-2 '  style={{textAlign:"center",fontSize:"14px"}}>
             Your password has been changed successfully 
           </div>
           <p style={{fontSize:"13px",textAlign:"center",fontWeight:"bold", color: "rgba(128, 128, 128,.8)"}} className='mt-3' >Your password has been cahnged successfully</p>

@@ -24,12 +24,12 @@ export default function Search() {
       </p>
       
       <div className="text-center">
-        <p style={HeadingStyle}>
+        <p className='text-dark' style={HeadingStyle}>
           Take Control Of Your Projects
           <img style={{ width: "20px", marginBottom: "20px" }} src="star.png" alt="star" />
         </p>
         
-        <p className="fw-bold" style={{ marginTop: "-25px", fontSize: "22px" }}>
+        <p className="fw-bold text-dark" style={{ marginTop: "-25px", fontSize: "22px" }}>
           Collaborate Like Never Before
         </p>
         
@@ -46,7 +46,7 @@ export default function Search() {
           </div>
         </div>
         <div className='mt-3'>
-        <img src ='Search.png' style={{width:"100%",height:"600px"}}/>
+        <img src ='Search.png' style={{width:"80%",height:"600px",}}/>
         </div>
         
       </div>

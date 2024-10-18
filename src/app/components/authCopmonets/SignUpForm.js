@@ -75,7 +75,7 @@ export default function SignUpForm() {
   return (
     <div >
     <form onSubmit={handleSubmit}>
-      <h5 className="fw-bold mt-3" >New account</h5>
+      <h5 className="fw-bold mt-3 text-dark" >New account</h5>
       <p className="fw-bold text-muted " style={{fontSize:"13px"}}>Start your journey from here</p>
       <p className="fw-bold text-dark" style={{fontSize:"14px"}}>
         Already have an account?{' '}

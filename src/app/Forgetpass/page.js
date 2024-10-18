@@ -31,7 +31,7 @@ export default function ForgetPassword() {
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
           <form onSubmit={handleSubmit}>
-            <p className='fw-bold fs-6 ' style={{ marginTop: "120px" }}>You forgot your password</p>
+            <p className='fw-bold fs-6 text-dark ' style={{ marginTop: "120px" }}>You forgot your password</p>
             <p  style={{ fontSize: ".7rem", fontWeight: "bold", color: "rgba(128, 128, 128,.9)" }}>
               To get you back to your account write your
             </p>
@@ -64,7 +64,7 @@ export default function ForgetPassword() {
                 Contact support
               </Link>
             </div>
-            <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
+            <div style={{ display: "flex",height: "100px", justifyContent: "flex-start", alignItems: "flex-end" }}>
                      <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
                     </div>
           </form>

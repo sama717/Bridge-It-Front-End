@@ -111,7 +111,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <h2 className="fw-bold">OTP Verification</h2>
+              <h2 className="fw-bold text-dark">OTP Verification</h2>
               <p
                 style={{
                   fontSize: ".8rem",
@@ -145,7 +145,7 @@ export default function Home() {
                   style={{
                     color: "#004ea0",
                     fontWeight: "bold",
-                    marginRight: "30px",
+                    marginRight: "10px",
                   }}
                   href="#"
                   onClick={handleResend}
@@ -235,12 +235,15 @@ p {
   font-size: 1.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: #000;
+  background-color: #fff;
 }
 
 .resend {
   font-size: 0.8em;
   margin-bottom: 20px;
   margin-top: 30px;
+  display: flex;
 }
 
 .timer {

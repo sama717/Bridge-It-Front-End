@@ -1,8 +1,8 @@
 
 "use client";
-import Nabar from '../components/landingpageComponents/Navbar'
 import SearchSection from '../components/landingpageComponents/Search'
 import './page.module.css'
+import Navbar from '../components/landingpageComponents/Navbar'
 import WorktogetherSection from '../components/landingpageComponents/WorktogetherSection';
 import Section3 from '../components/landingpageComponents/Section3'
 import Everything from '../components/landingpageComponents/EveryThing'
@@ -20,7 +20,7 @@ export default function Home(){
     return(
       <div>
         <h1>
-       <Nabar/>
+          <Navbar/>
         </h1>
         <div>
           <SearchSection/>

@@ -83,7 +83,7 @@ export default function LoginForm() {
   
   return (
     <form onSubmit={handleSubmit} >
-      <h4 className="fw-bold mt-4">Log in</h4>
+      <h4 className="fw-bold mt-4 text-dark">Log in</h4>
 
       <p className="fw-bold mt-4 mb-5" style={{ color: "#525252",fontSize:"12px" }}>
         Don't have an account?{' '}
