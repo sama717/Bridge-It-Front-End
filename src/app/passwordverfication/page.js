@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 
 "use client" ;
 import Link from 'next/link';
@@ -22,9 +24,9 @@ export default function Verfiction(){
              Back to login
                 </Button>
           </Link>
-          <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
-                    </div>
+          <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div> 
         </form>
       </div>
       <div className={styles.imageContainer}>

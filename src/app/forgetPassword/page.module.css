@@ -1,19 +1,20 @@
-
-
-.gridContainer {
+/* .gridContainer {
   display: grid;
   grid-template-columns: 35% 45%;
-  height: 100vh; 
+  height: 100vh;
   justify-content: center;
+ 
 }
+
 .formContainer {
   background-color: white;
-  /* padding: 40px;  */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
-  align-items: center; 
-  height: 100%; 
+  align-items: center;
+  height: 100%;
+  position: relative;
+  
 }
 
 .imageContainer {
@@ -21,7 +22,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100%; 
+  height: 100%;
 }
 
 .overlay {
@@ -32,40 +33,121 @@
   height: 100%;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7));
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
 }
+
 
 .logoContainer {
   position: absolute;
-  top: 20px; 
-  right: 20px; 
+  top: 20px;
+  right: 20px;
 }
 
 .logo {
-  width: 80px; 
+  width: 80px;
   height: auto;
 }
+
 
 .overlayText {
   display: flex;
   color: white;
-  font-size: 20px; 
+  font-size: 20px;
   justify-content: flex-end;
-  padding: 10px; 
+  padding: 10px;
 }
 
+
 .schoollink {
-  position: relative; 
-  display: inline-block; 
+  position: relative;
+  display: inline-block;
 }
 
 .schoollink::after {
-  content: ""; 
-  width: 100%; 
-  background-color: blue; 
+  content: "";
+  width: 100%;
+  background-color: blue;
   height: 2px;
   position: absolute;
-  left: 0; 
-  bottom: -5px; 
+  left: 0;
+  bottom: -5px;
 }
+
+
+@media (max-width: 1200px) {
+  .gridContainer {
+      grid-template-columns: 1fr;
+      height: auto;
+  }
+
+  .formContainer, .imageContainer {
+      height: auto;
+      padding: 20px;
+  }
+
+  .formContainer {
+      box-shadow: none; 
+  }
+
+  .overlayText {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+      grid-template-columns: 1fr;
+      padding: 10px;
+  }
+
+  .formContainer {
+      width: 100%;
+      padding: 20px;
+  }
+
+  .overlayText {
+      font-size: 16px;
+  }
+
+  .logo {
+      width: 60px;
+  }
+
+  .submit {
+      width: 100%; 
+  }
+
+  .icons {
+      flex-direction: column; 
+      gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridContainer {
+      grid-template-columns: 1fr;
+      padding: 5px;
+  }
+
+  .formContainer {
+      padding: 10px;
+  }
+
+  .overlayText {
+      font-size: 14px;
+  }
+
+  .logo {
+      width: 50px;
+  }
+
+  .submit {
+      width: 100%; 
+  }
+
+  .icons {
+      flex-direction: column;
+      gap: 10px;
+  }
+} */
 

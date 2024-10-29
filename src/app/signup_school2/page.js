@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 import PhoneNumberInput from '../components/authCopmonets/PhoneNumberInput'; 
 import FullNameInput from '../components/authCopmonets/FullNameInput';
 import EmailInput from '../components/authCopmonets/EmailInput';
@@ -45,7 +46,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/register', {
+      const response = await fetch('https://api.bridgeit.site/api/register', {
         method: 'POST',
         body: data,
       });
@@ -77,6 +78,7 @@ export default function Home() {
     <div className='container'>
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
+        <div className={styles.formConytent}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <h5  className={styles.title}>School Account</h5>
             <p className={styles.subtitle} >Start your journey from here</p>
@@ -91,8 +93,9 @@ export default function Home() {
             <PhoneNumberInput name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
             <WhatsAppCheckbox name="sameAsWhatsapp" checked={formData.sameAsWhatsapp} onChange={handleChange} />
             <PasswordInput name="password" value={formData.password} onChange={handleChange} />
-
-            <Button className='mt-2'
+            <div >
+              <div className={styles.submitdiv}>
+              <Button className={styles.submit}
               style={{
                 backgroundColor: "#0652a2",
                 width: "100%",
@@ -102,12 +105,16 @@ export default function Home() {
             >
               Sign up
             </Button>
-            {/* <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
-                    </div> */}
+              </div>
+           
+            </div>
+    
+            <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div> 
                      
           </form>
-       
+       </div>
         </div>
        
 

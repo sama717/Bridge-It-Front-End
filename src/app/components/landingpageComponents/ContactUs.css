@@ -1,3 +1,45 @@
-.imageContainer{
-    background-image: url('/signup/src/app/images/signup.png');
-}
+
+.contact-us-background {
+    background-image: url('/BG.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .text-white {
+    color: white;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-container {
+    max-width: 430px;
+    width: 100%;
+  }
+  .button2{
+    background-color: #004EA0;
+    width: 48%;
+    height: 40px;
+     font-Weight: bold ;
+     font-size: 14px;
+     text-align: center;
+  }
+  .label{
+    color:#061C3D;
+    font-weight: 400;
+    text-align: left;
+  }
+  ::placeholder{
+    color: #838E9E !important;
+    font-weight: 400;
+   
+  }
+  

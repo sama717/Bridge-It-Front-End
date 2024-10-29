@@ -1,8 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 "use client";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './Searchinput.css'
-
 export default function Search() {
   const SearchStyle = { 
     background: 'linear-gradient(90deg, #002572, #007bff)',
@@ -46,7 +45,7 @@ export default function Search() {
           </div>
         </div>
         <div className='mt-3'>
-        <img src ='Search.png' style={{width:"80%",height:"600px",}}/>
+        <img src ='Search.png' style={{width:"100%",height:"600px",}}/>
         </div>
         
       </div>

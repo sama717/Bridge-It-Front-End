@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import '../about/css/about.css'
 import '../about/css/responsive.css'
 import Navbar from '../components/landingpageComponents/Navbar'
