@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from 'next/link';
 import { IoBusinessOutline } from 'react-icons/io5';
@@ -25,6 +26,7 @@ export default function Home() {
     <div className='container'>
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
+        {/* <div className={styles.formConytent}> */}
           <form style={{ width: "70%" }}>
             <h5 style={{marginTop:"60px"}} className="fw-bold text-dark">New account</h5>
             <p style={{fontWeight:"bolder", color:"#4b5563", marginBottom:"30px",fontSize:"14px"}}>Start your journey from here</p>
@@ -66,10 +68,11 @@ export default function Home() {
                 Register as Regular User
               </h5>
             </Link>
-            <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
-                    </div>
+            <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div> 
           </form>
+          {/* </div> */}
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.overlay}>

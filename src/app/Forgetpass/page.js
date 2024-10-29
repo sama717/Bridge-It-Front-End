@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import styles from '../page.module.css'; 
 import { useState } from 'react';
@@ -30,6 +31,7 @@ export default function ForgetPassword() {
     <div className='container'>
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
+        <div className={styles.formConytent}>
           <form onSubmit={handleSubmit}>
             <p className='fw-bold fs-6 text-dark ' style={{ marginTop: "120px" }}>You forgot your password</p>
             <p  style={{ fontSize: ".7rem", fontWeight: "bold", color: "rgba(128, 128, 128,.9)" }}>
@@ -64,11 +66,13 @@ export default function ForgetPassword() {
                 Contact support
               </Link>
             </div>
-            <div style={{ display: "flex",height: "100px", justifyContent: "flex-start", alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
-                    </div>
+           
+            <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div>
+                    
           </form>
-
+          </div>
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.overlay}>

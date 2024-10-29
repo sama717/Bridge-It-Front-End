@@ -16,7 +16,7 @@
     background-color: #fff !important;
   }
   
-  /* Active link background */
+ 
   .comp-school {
     background: linear-gradient(to right, #002572, #007bff) !important;
     color: transparent !important;
@@ -24,7 +24,7 @@
   }
   
   .nav-link {
-    font-size: 1.1875rem !important;
+    font-size: 1rem !important;
     position: relative;
   }
   
@@ -32,12 +32,12 @@
     color: #000;
   }
   
-  /* Animation for links */
+  
   .nav-link::after {
     content: '';
     display: inline-block;
     width: 0;
-    height: 6px;
+    height: 4px;
     border-radius: 13px;
     background-image: linear-gradient(to right, #FFC107, #BD8F05, #FCBF07);
     position: absolute;
@@ -48,11 +48,11 @@
   }
   
   .nav-link:hover::after {
-    width: 53px;
+    width: 90%;
   }
   
   .active-link .nav-link::after {
-    width: 53px;
+    width: 90%;
     transition: none;
   }
   
@@ -60,7 +60,7 @@
   .access-buttons {
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 33%;
   }
 
   .gradient-icon {
@@ -74,7 +74,7 @@
 
   .start-btn{
     width: 190px;
-    min-width: 129px;
+    /* min-width: 129px; */
     background-color: #004EA0 !important;
   }
 
@@ -91,9 +91,9 @@
   }
 
   .btn{
-    height: 50px;
+    height: 40px;
     font-size: 1rem;
-    border-radius: 15px;
+    border-radius: 7px;
     border: none;
   }
 
@@ -190,3 +190,6 @@
     }
   }
   
+.nav-item{
+  font-size: 12px;
+}

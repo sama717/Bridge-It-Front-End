@@ -1,0 +1,46 @@
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.feature-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+.feature-table td, .feature-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.check {
+    color: green;
+}
+
+.cross {
+    color: red;
+}

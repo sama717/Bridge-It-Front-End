@@ -1,0 +1,96 @@
+
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+  }
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: left !important;
+    height: 700px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: relative; 
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+ .plan li {
+    font-size: 12px;
+    margin-top: 7px;
+    padding-left: 30px; 
+    margin: 5px 0; 
+    background-image: url('/CheckCircle.png');
+    background-repeat: no-repeat; 
+    background-position: 0 50%; 
+    background-size: 20px 20px; 
+}
+.card2 .plan li{
+    background-image: url('/whiteCheckCir.png');
+}
+.card2 del{
+    color: #FFFFFF80;
+}
+h2{
+    color: #374151;
+    font-size: 18px;
+}
+.goldenicon{
+    width: 40px;
+    height: 40px;
+}
+.startbtn{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 90%;
+    height: 37px;
+    border: none;
+    border-radius: 10px;
+}
+.blue{
+   background-image: linear-gradient(#0A3FAD,#041A47 );
+   color: #EAEAEA;
+}
+.card2 .discount{
+    font-size: 10px;
+   margin-left: 80px;
+    color: #FFFFFF;
+    background-color: #FFFFFF33;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+}
+.bluebtn{
+    background-color: #004EA0;
+    color: white;
+}
+.white{
+    background-color: #F5F8FF;
+    color: #004EA0;
+}
+del{
+    color: rgba(23, 15, 73, 0.502);
+}
+.popularIcon {
+    position: absolute; 
+    top: 0; 
+    right: -5%; 
+    width: 60px; 
+    height: 60px; 
+    z-index: 10; 
+    transform: translateY(-33px); 
+}
+
+
+
+
+

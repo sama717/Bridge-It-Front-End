@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
 export default function Home() {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -16,7 +17,7 @@ export default function Home() {
   const sendOtpRequest = (email) => {
     const formData = new FormData();
     formData.append("email", email);
-    fetch("http://127.0.0.1:8000/api/email/forget/requireOTP", {
+    fetch("https://api.bridgeit.site/api/email/forget/requireOTP", {
       method: "POST",
       body: formData,
     })
@@ -75,7 +76,7 @@ export default function Home() {
     formData.append("email", email);
     formData.append("token", otpToken);
 
-    fetch("http://127.0.0.1:8000/api/email/forget/checkOTP", {
+    fetch("https://api.bridgeit.site/api/email/forget/checkOTP", {
       method: "POST",
       body: formData,
     })
@@ -96,11 +97,15 @@ export default function Home() {
   };
 
   return (
+
     <div className="container">
+     
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
-          <div className="otp-container">
-            <div className="otp-box">
+        <div className={styles.formConytent}>
+         <form>
+          <div className={styles.otpContainer}>
+            <div className={styles.otpbox}>
               <div className="icon-container">
                 <div  className={styles.imagec}>
                
@@ -158,12 +163,18 @@ export default function Home() {
               <button className="submit mt-5" onClick={handleConfirm}>
                 Confirm
               </button>
-                 <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <img src="copyrights.png" style={{ height: "12px",marginLeft:"-30px"}}/>
-                    </div>
                  </div>
+                 
           </div>
+          
+          <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div>      
+          </form>
+          
         </div>
+        </div>
+
         <div className={styles.imageContainer}>
           <div className={styles.overlay}>
             <div className={styles.overlayText}>

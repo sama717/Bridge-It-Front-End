@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // src/app/login/page.js
 "use client";
 import LoginForm from '../components/authCopmonets/LoginForm';
@@ -9,7 +10,10 @@ export default function LoginPage() {
         <div className='container'>
           <div className={styles.gridContainer}>
             <div className={styles.formContainer}>
+              <div className={styles.formConytent}>
               <LoginForm />
+              </div>
+            
             </div>
             <div className={styles.imageContainer}>
               <div className={styles.overlay}>

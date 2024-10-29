@@ -9,6 +9,7 @@ import Everything from '../components/landingpageComponents/EveryThing'
 import ConnectWithApps from '../components/landingpageComponents/ConectWithApps'
 import ContactUs from '../components/landingpageComponents/ContactUs';
 import FAQS from '../components/landingpageComponents/FAQS';
+import Footer from '../components/landingpageComponents/Footer'
 import { useEffect } from 'react';
 export default function Home(){
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function Home(){
         </div>
         <div>
           <ContactUs/>
+        </div>
+        <div>
+          <Footer/>
         </div>
       
       </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import styles from '../page.module.css';
 import SignUpForm from '../components/authCopmonets/SignUpForm';
@@ -10,7 +11,9 @@ export default function SignUpPage() {
             <div className='container'>
                 <div className={styles.gridContainer}>
                     <div className={styles.formContainer}>
-                        <SignUpForm />
+                    <div className={styles.formConytent}>
+                    <SignUpForm />
+                    </div> 
                     </div>
                     <div className={styles.imageContainer}>
                         <div className={styles.overlay}>

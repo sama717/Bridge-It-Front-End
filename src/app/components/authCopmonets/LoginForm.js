@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -40,7 +43,7 @@ export default function LoginForm() {
     dispatch(loginStart()); 
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/login', {
+      const response = await fetch('https://api.bridgeit.site/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -71,17 +74,18 @@ export default function LoginForm() {
     }
   };
   const handleGoogleLogin =  () => {
-    window.location.href = 'http://127.0.0.1:8000/api/register/google';
+    window.location.href = 'https://api.bridgeit.site/api/register/google';
 
     
   };
   
   const handleGithubLogin = () => {
    
-    window.location.href = 'http://127.0.0.1:8000/api/register/github';
+    window.location.href = 'https://api.bridgeit.site/api/register/github';
   };
   
   return (
+    <div>
     <form onSubmit={handleSubmit} >
       <h4 className="fw-bold mt-4 text-dark">Log in</h4>
 
@@ -153,7 +157,12 @@ export default function LoginForm() {
           <FontAwesomeIcon icon={faFacebook} style={{ color: "#1877f2", fontSize: "23px", marginLeft: "30px" }} />
         </span>
       </div>
-      <img src="copyrights.png" style={{ height: "12px", marginTop: "40px", marginLeft: "-40px" }} />
+      <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div>
     </form>
+   
+
+    </div>
   );
 }

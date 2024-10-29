@@ -36,7 +36,7 @@ export default function SignUpForm() {
     dispatch(registerStart());  
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/register', {
+      const response = await fetch('https://api.bridgeit.site/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,11 +65,11 @@ export default function SignUpForm() {
   };
 
   const handleGoogleRegister = () => {
-    window.location.href = 'http://127.0.0.1:8000/api/register/google';
+    window.location.href = 'https://api.bridgeit.site/api/register/google';
   };
 
   const handleGithubRegister = () => {
-    window.location.href = 'http://127.0.0.1:8000/api/register/github';
+    window.location.href = 'https://api.bridgeit.site/api/register/github';
   };
 
   return (
@@ -121,7 +121,7 @@ export default function SignUpForm() {
       </div>
       {errorMessage && <p className="text-danger">{errorMessage}</p>}
       {successMessage && <p className="text-success">{successMessage}</p>}
-      <Button type="submit" className=" submit" disabled={isSubmitting}>
+      <Button type="submit " className=" submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Sign up'}
       </Button>
       <Link href="./signup_school">
@@ -143,7 +143,9 @@ export default function SignUpForm() {
           <FontAwesomeIcon icon={faFacebook} style={{ color: "#1877f2", fontSize: "23px", marginLeft: "30px", cursor: "pointer" }} />
         </span>
       </div>
-      <img src="copyrights.png" style={{ height: "12px", marginTop: "30px", marginLeft: "-40px" }} />
+      <div className="copyright" >
+          All Copyrights go to Bridge It © 2024
+        </div>
     </form>
     </div>
   );
