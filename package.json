@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.2.7",
     "bootstrap": "^5.3.3",
+    "font-awesome": "^4.7.0",
     "intl-tel-input": "^24.5.0",
     "react": "^18",
     "react-bootstrap": "^2.10.4",

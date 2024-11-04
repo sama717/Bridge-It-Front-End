@@ -58,6 +58,33 @@
         align-items: center;
 
     }
+
+    .form-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-block{
+        width: 100%;
+        min-width: 347px;
+        padding-right: 1em;
+    }
+
+    .form-btn button{
+        background-color: #004EA0;
+        color: #fff;
+        width: 50%;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 1.1rem;
+    }
+
+    .form-img {
+        margin: 2em 0em;
+        width: 70%;
+    }
 }
 
 @media  screen and (max-width: 950px) {
@@ -243,6 +270,7 @@
     
 }
 
+
 @media screen and (max-width: 530px) {
     .about-sec-2 h2{
         width: 18ch;
@@ -321,6 +349,37 @@
 
     .grid-container .box p{
         font-size: 0.889rem;
+    }
+    .faq-about h2 {
+        font-size: 1.75rem;
+        text-align: left; 
+    }
+    .faq-about .original-text {
+        display: none;
+    }
+    .faq-about .responsive-text {
+        display: inline-block; 
+        margin-left: 45px;
+        font-size: 2rem;
+    }
+    .faq-about {
+        background-color: #FFF;
+        padding: 5em 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .accordion-item {
+        font-size: 1rem
+    }
+    
+    
+    .accordion-button {
+        padding: 20px 15px; 
+        font-size: 1.1rem;
     }
     
 }

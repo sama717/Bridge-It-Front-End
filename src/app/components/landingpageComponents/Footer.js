@@ -67,7 +67,7 @@ const Footer = () => {
     return (
         <React.Fragment>
             <div className="container-fluid bg-white text-dark footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style={{ borderTop: "1px solid #DFDFDF" }}>
-                <div className="container py-5">
+                <div className="container py-4">
                     <div className="row g-5">
                         <div className="col-lg-3 col-md-6">
                             <img src='projectlogo.png' alt="Project Logo" />

@@ -2,7 +2,7 @@
 import './css/FeatureComparisonTable.css'
 export default function FeatureTable() {
     return (
-<div className="table">
+<div className="table container">
     <div className="row">
     <div className="section"></div>
     <div className="section"> Golden</div>
