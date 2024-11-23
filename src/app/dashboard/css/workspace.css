@@ -1,0 +1,286 @@
+.workspace-container {
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.workspace-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+}
+
+.edit-search{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 170px;
+}
+
+.workspace-cards{
+    width: 100%;
+}
+
+.workspace-cards .card{
+    width:min-content;
+    display: flex ;
+    justify-content: center;
+    align-content: center;
+    border-bottom: none !important;
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 0em 1.5em 1.5em 0em;
+}
+
+.workspace-cards .card .card-body{
+    border-bottom: none !important;
+}
+
+.img-container{
+    width: 240px;
+    height: 222px;
+    overflow: hidden;
+    margin: 0.5em 1em;
+    border-radius: 10px;
+    position: relative;
+}
+
+.img-container span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-top: 1.5em;
+    color: #fff;
+    background: linear-gradient(90deg, #041A47 0%, #0A3FAD 100%);
+    border-radius: 10px 0 0 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 0.75rem;
+    filter:opacity(0.8)
+}
+
+.img-container .more-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-description p{
+    font-size: 0.8rem;
+    transform: translateY(50%);
+}
+
+.card-buttons{
+    display: flex;
+}
+
+.btn-1{
+    width:20%;
+    font-size: 1.2rem;
+}
+
+.btn-2{
+    width: 60%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-btn span{
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.card-buttons .btn{
+    border-radius: 0 0 10px 10px !important;
+}
+
+.btn-primary{
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+    padding: 0.5em 1em !important;
+    transition: all 0.3s;
+}
+
+.btn-secondary{
+    background-color: #F5FAFF !important;
+    border: none;
+    padding: 0.5em 1em !important;
+    transition: all 0.3s;
+    color: #4B5563;
+}
+
+.btn-primary:hover , .btn-secondary:hover{
+    transform: scale(1.1);
+}
+
+.btn-secondary:hover{
+    color: #4B5563;
+}
+
+.btn-outline-secondary {
+    border-color: #E5E7EB !important;
+    border-radius: 10px !important;
+    color: #3B95F6;
+    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.btn-outline-secondary span {
+    color: #23235F;
+}
+
+.btn-outline-secondary:hover {
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+    color: #E5E7EB;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:hover span {
+    color: #E5E7EB;
+}
+
+.btn-outline-primary {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    color: #004EA0;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Ensure gradient stays within border */
+    z-index: 1;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+.btn-outline-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px; /* Adjust padding for border thickness */
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1; /* Position behind button content */
+}
+
+.btn-outline-primary:hover {
+    color: #fff; /* Adjust hover color as needed */
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+}
+
+.workspace-buttons .btn-secondary {
+    position: relative;
+    color: transparent; /* Hide the solid color */
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    border: none !important;
+    font-size: 1rem !important;
+    padding: 0.5em 0.8em !important;
+    overflow: hidden; /* Ensure pseudo-element stays within button */
+}
+
+.workspace-buttons .btn-secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F5FAFF; 
+    z-index: -1; 
+    border-radius: inherit; 
+}
+
+.pagination-container {
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+    font-size: 1.1rem;
+    border: none !important; /* Remove any inherited border */
+    background-color: transparent;
+  }
+  
+  .pagination-container nav {
+    border: none !important; /* Remove borders around the nav element */
+    box-shadow: none !important; /* Remove any box shadows */
+    background-color: transparent; /* Ensure no background is applied */
+  }
+  
+  .page-item {
+    position: relative;
+    border: none !important; /* Remove item borders */
+    background-color: transparent;
+  }
+  
+  .page-link {
+    color: #6c757d;
+    background-color: transparent;
+    border: none !important;
+    padding: 5px 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+  }
+  
+  .page-link:hover {
+    background-color: #f1f1f1;
+    color: #000;
+  }
+  
+  .page-item.active .page-link {
+    color: #fff;
+    background-color: #f0b429;
+    box-shadow: 0 2px 6px rgba(240, 180, 41, 0.5);
+  }
+  
+  .page-item.disabled .page-link {
+    color: #d0d0d0;
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+  
+  .page-link span[aria-hidden="true"] {
+    font-size: 14px;
+    line-height: 1;
+  }
+  

@@ -2,6 +2,7 @@
 'use client'
 
 import '../about/css/about.css'
+import Link from 'next/link';
 import '../about/css/responsive.css'
 import Footer from '../components/landingpageComponents/Footer'
 import Navbar from '../components/landingpageComponents/Navbar'
@@ -144,7 +145,7 @@ export default function About() {
                     <p>With all the tools and features you need in one place, you can manage your tasks, collaborate with your team, and stay organized—effortlessly. Start your project today and experience how simple project management can be</p>
                 </div>
                 <div>
-                    <button className='btn start-2-btn fw-bold'>Start Now For Free</button>
+                    <Link href='/signup'><button className='btn start-2-btn fw-bold'>Start Now For Free</button></Link>
                 </div>
             </div>
         </section>

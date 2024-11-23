@@ -68,7 +68,7 @@ export default function LoginForm() {
         sessionStorage.setItem('token', data.token);
       }
 
-      router.push('/dashbord');
+      router.push('/dashboard');
     } catch (error) {
       dispatch(loginFailure(error.message));
     }
@@ -161,8 +161,7 @@ export default function LoginForm() {
           All Copyrights go to Bridge It © 2024
         </div>
     </form>
-   
-
+  
     </div>
   );
 }

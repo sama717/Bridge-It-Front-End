@@ -1,0 +1,452 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+body{
+    background-color: #fff;
+}
+
+.side-nav {
+    background-color: #003B7A;
+    width: 18%;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    z-index: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100vh; /* Ensure it doesn't extend beyond viewport height */
+    overflow-x:hidden;
+}
+
+/* Logo Styling */
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 12%;
+    align-items: center;
+    position: relative;
+    padding: 1.5em 0;
+    overflow: hidden;
+}
+
+.logo img {
+    transition: transform 0.3s ease;
+    width: 60px;
+    max-width: 100%;
+    min-width: 45px;
+}
+
+/* Separator Under Logo */
+.logo::after {
+    content: '';
+    width: 95%;
+    height: 0.5px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    min-width: 50px;
+}
+
+/* Links Styling */
+.aside-links,
+.aside-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #B8B8B8;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    padding: 0.5em;
+}
+
+.aside-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.aside-links ul li {
+    padding: 1em 0;
+}
+
+.aside-block {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.aside-block::before {
+    content: '';
+    width: 95%;
+    height: 0.5px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 2;
+    min-width: 50px;
+}
+
+.aside-logout {
+    padding: 1em;
+    position: relative;
+    height: 80px;
+}
+
+.aside-logout a {
+    color: #FF6F6E;
+    text-decoration: none;
+}
+
+.aside-logout span {
+    text-decoration: underline;
+}
+
+.aside-block a, .aside-links a {
+    transition: all 0.3s;
+}
+
+/* Hover effect on the icon */
+.aside-links ul li a:hover i,
+.aside-block a:hover i {
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-background-clip: text; /* Clips the gradient to the text (icon) */
+    color: transparent; /* Makes the icon color transparent to show the gradient */
+    transition: all 0.3s ease;
+}
+
+/* Active link effect on the icon */
+.active-link i {
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-background-clip: text; /* Clips the gradient to the text (icon) */
+    color: transparent; /* Makes the icon color transparent to show the gradient */
+}
+
+/* Hover effect on the link (excluding the icon) */
+.aside-links ul li a:hover,
+.aside-block a:hover {
+    color: #003B7A;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0.7em 1.5em;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+/* Active link styling for the whole link */
+.active-link {
+    color: #003B7A;
+    background-color: #fff;
+    border-radius: 16px;
+    font-weight: bold;
+    padding: 0.7em 1.5em;
+}
+/* Icon spacing */
+.aside-links ul li a i,
+.aside-block a i,
+.aside-logout a i {
+    margin-right: 1.1em;
+}
+
+/* Collapse Button Styling */
+.collapse-button {
+    position: absolute;
+    top: 85px;
+    right: -10px; /* Adjust to be closer to the sidebar edge */
+    width: 30px; /* Make the button slightly larger if needed */
+    height: 30px;
+    background-color: #E5E7EB;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    z-index: 2; /* Higher z-index to stay above other elements */
+}
+
+/* Styles When Sidebar is Collapsed */
+.collapsed .side-nav {
+    width: 60px; /* Reduced width for collapsed state */
+}
+
+.collapsed .logo img {
+    transform: scale(1);
+}
+
+.collapsed .aside-links ul li a,
+.collapsed .aside-block a,
+.collapsed .aside-logout a {
+    display: flex;
+    align-items: center;
+}
+
+.main-content{
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 18%;
+    transition: all 0.3s;
+}
+
+.main-content h1{
+    color: #374151;
+    font-size: 2rem;
+}
+
+.nav-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    position: relative;
+    height: 100px;
+    transition: all 0.3s;
+    border-bottom: 1px solid #C1C1C1;
+    color: #000;
+    padding: 0em 2em;
+}
+
+.profile-info{
+    width: 15%;
+    min-width: 250px;
+}
+
+.profile-info  button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav-header .img-container{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1em;
+    color: #000;
+}
+
+.nav-header .img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.welcome-message{
+    font-size: 0.8rem;
+    color: #6B7280;
+
+}
+.search-bar {
+    width: 40%;
+    min-width: 250px;
+  }
+  
+  .search-icon-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-icon-wrapper svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #007BFF;
+  }
+  
+  .search-icon-wrapper input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #C1C1C1;
+    padding: 0 1em;
+    padding-left: 2.5em; /* Add space for the SVG icon */
+    font-size: 1rem;
+    color: #000;
+    transition: all 0.3s;
+  }
+  
+  .search-icon-wrapper input:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+    box-shadow: 0px 0px 5px #007BFF;
+  }  
+
+.work-space-dropdown {
+    width: 17%;
+    min-width: 185px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .form-select {
+    -webkit-appearance: none; /* Chrome, Safari, Opera */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Standard */
+    background-color: #F5FAFF;
+    padding-right: 2rem; /* Space for custom icon */
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #000;
+    width: 100%;
+    height: 40px;
+    background-image: none !important; /* Hide default arrow for IE */
+  }
+  
+  .dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-background-clip: text;
+    color: transparent;
+    pointer-events: none;
+    font-size: 1em;
+  }
+  
+.work-space-dropdown select{    
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 1em;
+    font-size: 1rem;
+    color: #000;
+    transition: all 0.3s;
+    background-color:#F5FAFF;
+    border: none;
+}
+
+.notification-lang{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    min-width: 90px;
+}
+
+.nav-header .notification-lang i{
+    font-size: 1.5rem;
+    color: #004EA0;
+    cursor: pointer;
+}
+
+.en-span {
+    display: inline-block;
+    color: #004EA0;
+    font-weight: bold;
+}
+
+
+/* Responsive Collapse at 750px */
+@media (max-width: 900px) {
+    .side-nav {
+        width: 60px;
+    }
+
+    .logo {
+        padding: 1.65em 0em;
+    }
+    .aside-links, .aside-block {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .aside-block::before {
+        content: '';
+        width: 95%;
+        height: 0.5px;
+        border-radius: 5px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 50px;
+    }
+
+    .aside-links span,
+    .aside-block span, .aside-logout span {
+        opacity: 0;
+    }
+
+    .collapse-button {
+        top: 80px;
+    }
+
+    .main-content {
+        width: 93.3%;
+        margin-left: 60px;
+    }
+
+    .nav-header {
+        height: 95px;
+    }
+
+    /* Remove hover effect on links and icons */
+    .aside-links ul li a:hover,
+    .aside-block a:hover {
+        color: #B8B8B8; /* Maintain the color but no hover effect */
+        background-color: inherit; /* No background color change */
+        padding: 0em; /* Keep padding as is */
+    }
+
+    /* Remove hover effect on the icon */
+    .aside-links ul li a:hover i,
+    .aside-block a:hover i {
+        background: none; /* Remove background gradient */
+        color: inherit; /* Keep the icon color as it is */
+        transition: none; /* Remove transition effect */
+    }
+
+    /* Active link effect on the icon */
+    .active-link {
+        color: #B8B8B8; /* Lighter color when collapsed or small */
+        background-color: transparent; /* No background */
+        border-radius: 0; /* Remove border radius */
+        font-weight: normal; /* No bold weight */
+        padding: 0em; /* Smaller padding */
+    }
+
+    /* Active icon when collapsed or small screen */
+    .active-link i {
+        color : #fff;
+    }
+    
+}
