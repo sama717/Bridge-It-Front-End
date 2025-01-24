@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-const Sidebar = () => {
+const Sidebar = () =>{
     
 const pathname = usePathname();
 
@@ -50,7 +50,7 @@ useEffect(() => {
 
 
 return(
-<aside className='side-nav'>
+<aside className="side-nav">
         <div>
           <div className='logo'>
             <img src='/dashboard-logo.png' alt="Dashboard Logo" />

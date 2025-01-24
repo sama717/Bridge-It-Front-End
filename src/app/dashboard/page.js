@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import withAuth from '../components/withAuth'; // Adjust the import if needed
+import withAuth from '../components/withAuth'; 
 
 const Dashboard = () => {
   const router = useRouter();
