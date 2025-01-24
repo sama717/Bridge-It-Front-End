@@ -420,6 +420,7 @@ body{
 
 .arrow-icon {
     cursor: pointer; /* Pointer cursor for the arrow */
+    margin-left: 0.5em;
 }
 
 .profile{
