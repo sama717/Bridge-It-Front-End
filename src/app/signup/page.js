@@ -3,7 +3,7 @@
 import styles from '../page.module.css';
 import SignUpForm from '../components/authCopmonets/SignUpForm';
 import { Provider } from 'react-redux';
-import store from '../store/page'; 
+import store from '../../redux/store/page'; 
 
 export default function SignUpPage() {
     return (

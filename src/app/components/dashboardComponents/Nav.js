@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 
 
+
 const Nav = () => {
   const pathname = usePathname();
 
@@ -38,7 +39,7 @@ const Nav = () => {
                   <button className="profile-button">
                         <div class="profile">
                           <div className="img-container">
-                              <img src='/profile-icon.jpeg' />
+                              <img src='/profile-icon.jpeg' alt='Profile-img'/>
                           </div>
                           <div className="profile-text">
                               <span className='welcome-message'>Welcome to bridge it</span>

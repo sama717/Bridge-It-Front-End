@@ -6,7 +6,7 @@ import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux'; 
-import { registerStart, registerSuccess, registerFailure } from '../../store/authSlice'; 
+import { registerStart, registerSuccess, registerFailure } from '../../../redux/store/authSlice'; 
 import { useRouter } from 'next/navigation';
 export default function SignUpForm() {
   const dispatch = useDispatch();

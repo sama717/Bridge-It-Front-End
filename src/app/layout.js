@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store/page'; 
+import store from '../redux/store/page'; 
 import useInternetStatus from '../app/hooks/useInternetStatus';
 import NoInternetConnection from '../app/components/NoInternetConnection';
 

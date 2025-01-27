@@ -1,6 +1,7 @@
 import React from 'react';
 import '../components/css/internet.css'
 import '../components/css/responsive.css'
+import Image from 'next/image';
 
 const NoInternetConnection = () => {
   const handleRefresh = () => {
@@ -11,7 +12,7 @@ const NoInternetConnection = () => {
     <div className='internet-section'>
       <div class="internet-block">
         <div className='internet-left'>
-          <img src='/bridge-it-logo.png' className='mb-4'/>
+          <Image src='/bridge-it-logo.png' className='mb-4' alt='Logo'/>
           <h1 className='mb-3'>There is no Internet connection</h1>
           <p>Please check your network and try again.</p>
           <div className='mt-5'>
@@ -19,7 +20,7 @@ const NoInternetConnection = () => {
           </div>
         </div>
         <div className='internet-right'>
-          <img src='/dino-img.png'/>
+          <Image src='/dino-img.png' alt='Dino'/>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginStart, loginSuccess, loginFailure } from '../../store/authSlice';
+import { loginStart, loginSuccess, loginFailure } from '../../../redux/store/authSlice';
 import RememberMeCheckbox from '../authCopmonets/RemberMe';
 export default function LoginForm() {
   const dispatch = useDispatch();

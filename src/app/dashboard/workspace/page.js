@@ -3,6 +3,7 @@
 import Layout from '../../components/dashboardComponents/Layout';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../css/workspace.css';
+import Image from 'next/image';
 
 const Workspace = () => {
   return (
@@ -36,7 +37,7 @@ const Workspace = () => {
               <div className="img-container">
                 <button className='btn more-btn'><i className="bi bi-three-dots"></i></button>
                 <span>CATEGORY</span>
-                <img src="/card-img.jpeg" className="card-img-top" alt="..." />
+                <Image src="/card-img.jpeg" className="card-img-top" alt="..." />
               </div>
               <div className="card-body">
                 <div className="card-text d-flex justify-content-between">
@@ -45,7 +46,7 @@ const Workspace = () => {
                 </div>
                 <div className='card-description mt-2'>
                   <p className="card-text text-secondary">8 Team Members</p>
-                  <img src='/members-photo.png' alt="Team members"/>
+                  <Image src='/members-photo.png' alt="Team members"/>
                 </div>
               </div>
               <div className='card-buttons'>
@@ -63,10 +64,10 @@ const Workspace = () => {
               </div>
             </div>
             <div className="card">
-              <div className="img-container">
+              <div className="Image-container">
                 <button className='btn more-btn'><i className="bi bi-three-dots"></i></button>
                 <span>CATEGORY</span>
-                <img src="/card-img.jpeg" className="card-img-top" alt="..." />
+                <Image src="/card-img.jpeg" className="card-img-top" alt="..." />
               </div>
               <div className="card-body">
                 <div className="card-text d-flex justify-content-between">
@@ -75,7 +76,7 @@ const Workspace = () => {
                 </div>
                 <div className='card-description mt-2'>
                   <p className="card-text text-secondary">8 Team Members</p>
-                  <img src='/members-photo.png' alt="Team members"/>
+                  <Image src='/members-photo.png' alt="Team members"/>
                 </div>
               </div>
               <div className='card-buttons'>

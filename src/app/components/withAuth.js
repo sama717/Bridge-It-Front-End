@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 
 const withAuth = (WrappedComponent) => {
-  return (props) => {
+  const ComponentWithAuth = (props) => {
     const router = useRouter();
     const token = useSelector((state) => state.auth.token);
 
@@ -16,6 +16,11 @@ const withAuth = (WrappedComponent) => {
 
     return token ? <WrappedComponent {...props} /> : null;
   };
+
+  // Assign a display name for debugging purposes
+  ComponentWithAuth.displayName = `WithAuth(${WrappedComponent.displayName || WrappedComponent.name || "Component"})`;
+
+  return ComponentWithAuth;
 };
 
 export default withAuth;
