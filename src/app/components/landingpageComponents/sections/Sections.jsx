@@ -40,6 +40,7 @@ const Sections = () => {
     },
   ];
 
+  console.log("refresh")
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -52,11 +53,11 @@ const Sections = () => {
         {sections.map((section) => (
           <div
             className="image"
-            style={{
-              position: "absolute",
-              left: section.direction.left,
-              bottom: section.direction.bottom,
-            }}
+            // style={{
+            //   position: "absolute",
+            //   left: section.direction.left,
+            //   bottom: section.direction.bottom,
+            // }}
           >
             <Image
               src={section.image}
