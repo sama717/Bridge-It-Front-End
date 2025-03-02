@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": " next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,11 +15,13 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@gsap/react": "^2.1.2",
     "@reduxjs/toolkit": "^2.2.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "firebase": "^11.2.0",
     "font-awesome": "^4.7.0",
+    "gsap": "^3.12.7",
     "intl-tel-input": "^24.5.0",
     "react": "^18",
     "react-bootstrap": "^2.10.5",
@@ -32,6 +34,7 @@
     "@types/node": "22.7.6",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.13",
-    "next": "^14.2.14"
+    "next": "^14.2.14",
+    "nodemon": "^3.1.9"
   }
 }

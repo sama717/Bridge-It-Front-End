@@ -1,0 +1,248 @@
+/* General Logo Styles */
+
+
+.follower {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: var(--heading-text-color);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+header {
+  height: var(--header-height);
+  transition: .3s;
+  position: relative;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+  justify-content: space-between;
+}
+
+
+.logo a svg {
+  stroke: var(--text-color);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo a h3 {
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+  font-family: var(--alt-font) !important;
+}
+
+/* Access Buttons */
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  width: 130px;
+  height: 65px;
+  border-radius: 65px;
+  font-size: 19px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--heading-text-color);
+  color: var(--heading-text-color);
+  font-weight: 100;
+}
+
+.sign-in {
+
+  width: 200px;
+  background: var(--heading-text-color);
+  border: none;
+  height: 60px;
+  border-radius: 60px;
+  color: var(--main-color);
+  font-weight: 100;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.animation-button {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+.animation-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--heading-text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 100%;
+  transition: .3s ease-in-out;
+  z-index: 1;
+}
+
+.animation-button span.span-container {
+  height: 20px;
+  display: block;
+  /* top: -26px; */
+  top: 0px;
+  position: relative;
+  transition: top .4s ease-in-out;
+}
+
+.animation-button:hover::before {
+  transform: translateX(-50%) scale(7);
+
+}
+
+.animation-button:hover .span-container {
+  top: -43px
+}
+
+.animation-button:hover .span-container>span {
+  animation: pulse 1 .3s ease-in-out;
+  color: var(--main-color);
+}
+
+.animation-button span:not(.span-container) {
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 9;
+}
+
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.burger-icon {
+  width: 30px;
+  height: 10px;
+  background: transparent;
+  /* overflow: hidden; */
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+
+.burger-icon.overlay::after {
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.burger-icon>div {
+  position: absolute;
+  width: 30px;
+  border-radius: 10px;
+  height: 1.5px;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+.burger-icon>div:first-child {
+  top: 0;
+  left: 0;
+}
+
+.burger-icon>div:last-child {
+  left: 0;
+  bottom: 0;
+}
+
+.burger-icon {
+  display: block;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  background: var(--main-color);
+  top: var(--header-height);
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 999;
+  border: none;
+  padding: 2rem;
+}
+
+nav ul {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0;
+}
+
+nav ul li {
+  width: fit-content;
+  overflow: hidden;
+
+}
+
+nav ul li a {
+  font-size: 50px;
+  text-transform: uppercase;
+  display: block;
+  color: var(--heading-text-color);
+  height: 68px;
+  overflow: hidden;
+}
+
+nav ul li a .span-link-container>span {
+  display: block;
+  transition: .3s;
+}
+
+nav ul li a .span-link-container>span .character {
+  display: inline-block;
+}
+
+nav ul li a .span-link-container {
+  top: 0;
+  position: relative;
+  transition: .3s ease-in-out;
+
+}
+
+nav ul li a:hover .span-link-container {
+  top: -75px;
+  position: relative;
+}
+
+@media (max-width:786px) {
+  nav ul li a {
+    font-size: 35px;
+    height: 66px;
+  }
+
+  nav ul li a:hover .span-link-container {
+    top: -50px;
+    position: relative;
+  }
+}

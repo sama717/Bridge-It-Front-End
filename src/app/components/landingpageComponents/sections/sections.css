@@ -1,0 +1,12 @@
+.sections-container {
+  display: flex;
+
+}
+
+.images-container {
+  align-self: flex-end;
+}
+
+.images-container .image {}
+
+.images-container .image img {}

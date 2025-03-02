@@ -7,8 +7,8 @@ import { Button } from 'react-bootstrap';
 
 export default function WorkTogether() {
   return (
-    <div style={{ marginTop: "0px", backgroundColor: "white", padding: "5rem 1rem" }}>
-      <Container fluid>
+    <section style={{ marginTop: "0px", backgroundColor: "white", padding: "5rem 1rem" }}>
+      <div className='container'>
         <Row className="align-items-center ">
           <Col xs={12} md={6} className="d-flex flex-column  ">
           <div className='ms-3'>
@@ -35,7 +35,7 @@ export default function WorkTogether() {
             />
           </Col>
         </Row>
-      </Container>
-    </div>
+      </div>
+    </section>
   );
 }

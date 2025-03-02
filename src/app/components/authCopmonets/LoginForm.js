@@ -46,7 +46,7 @@ export default function LoginForm() {
       const response = await fetch('https://api.bridgeit.site/api/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json',//multipart/form-data
         },
         body: JSON.stringify({ ...formData, rememberMe }),
       });
