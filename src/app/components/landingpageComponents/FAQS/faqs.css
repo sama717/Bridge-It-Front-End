@@ -1,0 +1,31 @@
+.faq {
+  /* max-width: 80%; */
+  /* border-radius: 50px; */
+  background-color: var(--heading-text-color);
+  margin: auto;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.faq .faq-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq .faq-section .image {
+  overflow: hidden;
+  width: 900px;
+  border-radius: 15px 0 0 15px;
+  flex-shrink: 0;
+  margin-right: -50px;
+  border: 8px solid #020202;
+  outline: 3px solid #464646;
+  position: relative;
+  min-height: 100vh;
+}
+
+.faq .faq-section .image img {
+  object-fit: cover;
+  object-position: top;
+}

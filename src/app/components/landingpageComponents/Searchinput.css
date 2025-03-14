@@ -1,19 +1,19 @@
 .search-container {
   display: flex;
   align-items: center;
-   width: 35%;
-  border-radius: 15px; 
-  overflow: hidden; 
-  border: 2px solid transparent; 
-  background: linear-gradient(90deg, #002572, #007bff); 
+  width: 35%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, #002572, #007bff);
   margin: auto;
   margin-top: 3rem;
 }
 
 .search-inner {
-  background-color: white; 
-  border-radius: inherit; 
-  padding: 5px; 
+  background-color: white;
+  border-radius: inherit;
+  padding: 5px;
   display: flex;
   align-items: center;
   width: 100%;

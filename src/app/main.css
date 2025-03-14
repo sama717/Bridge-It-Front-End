@@ -18,7 +18,7 @@
   --main-color: #151414;
   --heading-text-color: #f3c77c;
   --text-color: #e7cfb1;
-  --alt-font: degular, "Open Sans";
+  --alt-font: degular;
   --alt-font-3: "Space Grotesk";
   --section-margin: 50px;
   --main-margin: 150px;
@@ -65,4 +65,77 @@ body {
   left: 0;
   top: 0;
   z-index: -1;
+}
+
+.main-button {
+  width: 250px;
+  background-color: transparent;
+  border: 1px solid var(--heading-text-color);
+  height: 90px;
+  border-radius: 90px;
+  color: var(--heading-text-color);
+  font-weight: 100;
+  font-size: 20px;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.animation-button {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+.animation-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--heading-text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 100%;
+  transition: .3s ease-in-out;
+  z-index: 1;
+}
+
+.animation-button span.span-container {
+  height: 20px;
+  display: block;
+  top: 0px;
+  position: relative;
+  transition: top .4s ease-in-out;
+}
+
+.animation-button:hover::before {
+  transform: translateX(-50%) scale(10);
+}
+
+.animation-button:hover .span-container {
+  top: -57px
+}
+
+.animation-button:hover .span-container>span {
+  animation: pulse 1 .3s ease-in-out;
+  color: var(--main-color);
+}
+
+.animation-button span:not(.span-container) {
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 9;
+}
+
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

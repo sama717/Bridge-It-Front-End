@@ -62,7 +62,6 @@ header .container {
 }
 
 .sign-in {
-
   width: 200px;
   background: var(--heading-text-color);
   border: none;
@@ -72,68 +71,6 @@ header .container {
   font-weight: 100;
   font-size: 20px;
   margin-left: 10px;
-}
-
-.animation-button {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  place-content: center;
-}
-
-.animation-button::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--heading-text-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  top: 100%;
-  transition: .3s ease-in-out;
-  z-index: 1;
-}
-
-.animation-button span.span-container {
-  height: 20px;
-  display: block;
-  /* top: -26px; */
-  top: 0px;
-  position: relative;
-  transition: top .4s ease-in-out;
-}
-
-.animation-button:hover::before {
-  transform: translateX(-50%) scale(7);
-
-}
-
-.animation-button:hover .span-container {
-  top: -43px
-}
-
-.animation-button:hover .span-container>span {
-  animation: pulse 1 .3s ease-in-out;
-  color: var(--main-color);
-}
-
-.animation-button span:not(.span-container) {
-  display: block;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 9;
-}
-
-
-@keyframes pulse {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .burger-icon {

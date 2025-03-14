@@ -1,12 +1,70 @@
 .sections-container {
+  margin-top: var(--main-margin);
+}
+
+
+.sections-container .section-title h2 {
+  font-size: 15vw;
+  text-align: center;
+}
+
+.sections-container .section-title h2 .parent-span {
+  overflow: hidden;
+  text-transform: uppercase;
+  height: 245px;
+}
+
+.sections-container .section-title h2 .parent-span>span span {
+  transform: translateY(100%);
+  display: inline-block;
+  position: relative;
+  color: var(--text-color)
+}
+
+.sections-container .section-title h2 span {
+  display: block;
+  position: relative;
+}
+
+.sections-container .container .section-title p {
+  font-size: small;
+}
+
+
+
+.sections-container {
+  overflow: hidden;
+}
+
+
+.sections-container .container .section {
   display: flex;
-
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  position: relative;
+  gap: 150px;
 }
 
-.images-container {
-  align-self: flex-end;
+.sections-container .container .section .image {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.images-container .image {}
+.sections-container .container .section .image img {
+  transform: translateY(100%) rotate(270deg);
+  transform-origin: center center;
+}
 
-.images-container .image img {}
+.sections-container .container .section .text h3 {
+  font-size: 50px;
+}
+
+.sections-container .container .section .text p {
+  font-size: 15px;
+  color: #ddd;
+}
+
+/* .sections-container .container .section .text button{} */

@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { splitText } from "../../../../util/splitText";
 const Hero = () => {
   const container = useRef();
   const video = useRef();
@@ -110,22 +111,10 @@ const Hero = () => {
         <h6>
           <span>Pre-built method for</span>
         </h6>
-        <h3 className="main-title">
-          {mainTitle.split("").map((character, idx) => (
-            <span key={idx}>{character == " " ? "\b" : character}</span>
-          ))}
-        </h3>
+        <h3 className="main-title">{splitText(mainTitle, "span")}</h3>
         <p className="description">
-          <span className="text-1">
-            {description1.split("").map((character, idx) => (
-              <span key={idx}>{character == " " ? "\b" : character}</span>
-            ))}
-          </span>
-          <span className="text-2">
-            {description2.split("").map((character, idx) => (
-              <span key={idx}>{character == " " ? "\b" : character}</span>
-            ))}
-          </span>
+          <span className="text-1">{splitText(description1, "span")}</span>
+          <span className="text-2">{splitText(description2, "span")}</span>
         </p>
 
         <div className="search-bar">
