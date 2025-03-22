@@ -1,3 +1,4 @@
+"use client";
 // import SearchSection from "../components/landingpageComponents/Search";
 import "./page.module.css";
 import Navbar from "../components/landingpageComponents/Header/Navbar";

@@ -1,7 +1,7 @@
 "use client"; // Ensures this page only renders on the client-side
 
 import './page.module.css';
-import Navbar from '../components/landingpageComponents/Navbar';
+import Header from '../components/landingpageComponents/Header/Navbar';
 import PricingHeader from '../components/planspageCopmponent/PricingHeader';
 import PricingCards from '../components/planspageCopmponent/PricingCards';
 import FeatureTable from '../components/planspageCopmponent/FeatureComparisonTable';
@@ -19,7 +19,7 @@ export default function Plans() {
 
     return (
         <div>
-            <Navbar />
+            <Header />
             <PricingHeader />
             <PricingCards />
             <FeatureTable />

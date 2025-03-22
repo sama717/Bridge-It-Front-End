@@ -4,7 +4,8 @@ import '../about/css/about.css';
 import Link from 'next/link';
 import '../about/css/responsive.css';
 import Footer from '../components/landingpageComponents/Footer';
-import Navbar from '../components/landingpageComponents/Navbar';
+// import Navbar from '../components/landingpageComponents/Navbar';
+import Header from '../components/landingpageComponents/Header/Navbar';
 import { useState } from 'react';
 import Image from 'next/image'; // Import Image from next/image
 
@@ -67,7 +68,7 @@ export default function About() {
 
     return (
         <div>
-            <Navbar />
+            <Header />
             <section className="about-headline text-dark">
                 <main className="main-sec">
                     <div className="main-text">
