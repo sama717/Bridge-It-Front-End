@@ -1,12 +1,4 @@
 
-.iconContainer {
-  display: grid;
-  grid-template-columns: 35% 55%; /* Adjusted second column to allow more room */
-  justify-content: center;
-  margin-bottom: 50px;
-  column-gap: 4em; 
-}
-
   .schoollink {
     position: relative; 
     display: inline-block; 
@@ -26,6 +18,7 @@
       color:"#565f6d" ;
        font-weight:"bolder" ;
   }
+  
 
   .gridContainer {
     display: grid;
@@ -45,7 +38,7 @@
   }
   
   .imageContainer {
-    background-image: url('../images/signup.png');
+    background-image: url('/signup.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -81,6 +74,195 @@
     justify-content: flex-end;
     padding: 10px; 
   }
-  
 
+  @media (max-width: 990px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        height: 100vh; 
+    }
+
+    .formContainer {
+        width: 100%;
+        padding: 20px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7)), 
+        url('/signup.png'); 
+        background-size: cover; 
+        background-position: center;
+        height: 100vh;
+       
+    }
+    .formConytent{
+      background-color: #FFFFFFB8;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 24px;
+    }
+
+    .overlay {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7));
+        z-index: 1; 
+    }
+    .imageContainer {
+        display: none; 
+    }
+    .overlayText {
+        font-size: 16px;
+    }
+    .logo {
+        width: 60px;
+        display: none;
+    }
+    .submit {
+        width: 100%;
+    }
+    .icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 920px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+    .submitdiv{
+      display: flex;
+      justify-content: center;
+    }
+    
+    .submit{
   
+      width: 90% !important;
+     
+    }
+    
+    .title{
+      margin-top: 30px;
+   }
+    .overlay {
+        display: flex; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7));
+    }
+    .overlayText {
+        font-size: 14px;
+    }
+    .logo {
+        width: 50px;
+    }
+    .submit {
+        width: 50%;
+    }
+    .icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .formConytent {
+      background-color: #FFFFFFB8; 
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 24px;
+      padding: 20px; 
+  }
+   }
+   @media (max-width: 360px) {
+.formContainer {
+      width: 300px;
+   }
+   .title{
+      margin-top: 30px;
+   }
+   }
+   @media (max-width: 380px) {
+      .formContainer {
+            width: 380px;
+         }
+         .title{
+            margin-top: 30px;
+         }
+         }
+
+.iconContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  column-gap: 2em; 
+}
+
+.icon {
+  text-align: center;
+  cursor: pointer;
+  padding: 20px;
+  width: 130px;
+  height: 130px;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: #FBFDFF;
+}
+
+.selectedIcon {
+  border: 2px solid #0b56a4;
+  background-color: #FBFDFF;
+}
+
+.checkmark {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: linear-gradient(to right, #002572, #007BFF) !important;
+  border-radius: 50%;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #0b56a4;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+
+}
+
+.button:disabled {
+  background-color: #0b56a4;
+  cursor: not-allowed;
+}
+
+.registerLink {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  color: #0b56a4;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.registerLink:hover {
+  text-decoration: none;
+}

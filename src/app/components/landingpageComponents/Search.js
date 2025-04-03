@@ -32,7 +32,7 @@ export default function Search() {
           Collaborate Like Never Before
         </p>
         
-        <div style={{ color: "#6F6C90", marginTop: "-15px", fontWeight: "bold" }}>
+        <div className='search_content' style={{ color: "#6F6C90", marginTop: "-15px", fontWeight: "bold" }}>
           <p style={{ fontSize: "13px" }}>The ultimate platform for students and supervisors to seamlessly manage, track,</p>
           <p style={{ marginTop: "-20px", fontSize: "13px" }}>and complete university projects—powered by AI and designed for success.</p>
         </div>
@@ -44,7 +44,7 @@ export default function Search() {
             <img src ="send.png" style={{width:"20px",height:"20px"}}/>
           </div>
         </div>
-        <div className='mt-3'>
+        <div className='mt-3 search_image'>
         <img src ='Search.png' style={{width:"100%",height:"600px",}}/>
         </div>
         

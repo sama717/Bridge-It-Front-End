@@ -16,7 +16,7 @@
   }
   
   .imageContainer {
-      background-image: url('../app/images/signup.png');
+      background-image: url('/signup.png');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -106,7 +106,7 @@
       }
   
       .imageContainer {
-          background-image: url('../app/images/signup.png');
+          background-image: url('/signup.png');
           background-size: cover;
           background-position: center;
       }
@@ -131,19 +131,19 @@
           width: 100%;
           padding: 20px;
           background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 78, 160, 0.7)), 
-          url('../app/images/signup.png'); 
+          url('/signup.png'); 
           background-size: cover; 
           background-position: center;
           height: 100vh;
          
       }
-      /* .formConytent{
+      .formConytent{
         background-color: #FFFFFFB8;
         width: 100%;
         display: flex;
         justify-content: center;
         border-radius: 24px;
-      } */
+      }
 
       .otpContainer {
         display: flex;
@@ -186,7 +186,7 @@
           gap: 10px;
       }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 920px) {
       .gridContainer {
           grid-template-columns: 1fr;
       }
@@ -226,27 +226,30 @@
           gap: 10px;
       }
     
-       .formConytent{
-        background-color: #FFFFFFB8;
+      .formContent {
+        background-color: #FFFFFFB8; 
         width: 100%;
         display: flex;
         justify-content: center;
         border-radius: 24px;
-        
-      }
-      .otpContainer {
+        padding: 20px; 
+    }
+    
+    .otpContainer {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #FFFFFFB8;
-        border-radius: 24px;
-      }
-      
-      .otpbox {
+        background-color: transparent; 
+        border-radius: 24px; 
+        margin: 0; 
+    }
+    
+    .otpbox {
         width: 300px;
-        background-color: #FFFFFFB8;
-        border-radius: 10px;
-      }
+        background-color: transparent; 
+        border-radius: 10px; 
+        padding: 20px; 
+    }
     
      }
      @media (max-width: 360px) {
@@ -257,3 +260,11 @@
         margin-top: 30px;
      }
      }
+     @media (max-width: 380px) {
+        .formContainer {
+              width: 380px;
+           }
+           .title{
+              margin-top: 30px;
+           }
+           }

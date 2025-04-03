@@ -1,10 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 // src/app/login/page.js
 "use client";
 import LoginForm from '../components/authCopmonets/LoginForm';
-
 import styles from '../page.module.css';
-
 export default function LoginPage() {
     return (
         <div className='container'>
@@ -13,7 +12,6 @@ export default function LoginPage() {
               <div className={styles.formConytent}>
               <LoginForm />
               </div>
-            
             </div>
             <div className={styles.imageContainer}>
               <div className={styles.overlay}>

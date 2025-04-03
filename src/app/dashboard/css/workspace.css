@@ -40,14 +40,26 @@
 .workspace-cards .card .card-body{
     border-bottom: none !important;
 }
+@media screen and (max-width: 800px) {
+  .workspace-cards{
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+    align-content: center;
+  }
+}
 
 .img-container{
     width: 240px;
-    height: 222px;
+    height: 200px;
     overflow: hidden;
-    margin: 0.5em 1em;
+    margin: 0.5em .2em;
     border-radius: 10px;
     position: relative;
+   
+}
+.card-title{
+    margin-top: -50px;
 }
 
 .img-container span{
@@ -110,7 +122,7 @@
 
 .btn-2{
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,7 +130,7 @@
 
 .progress-btn span{
     display: inline-block;
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .card-buttons .btn{
@@ -269,7 +281,7 @@
   
   .page-item.active .page-link {
     color: #fff;
-    background-color: #f0b429;
+    background: linear-gradient(90deg, #FFC107, #997404);
     box-shadow: 0 2px 6px rgba(240, 180, 41, 0.5);
   }
   
@@ -282,5 +294,77 @@
   .page-link span[aria-hidden="true"] {
     font-size: 14px;
     line-height: 1;
+  }
+  .menu {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .menu-item {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .menu-item:hover {
+    background: #f5f5f5;
+  }
+  .btn-link{
+    text-decoration: none;
+    color: #004EA0;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    
+    margin-top: 20px;
+  }
+  
+  .modal-buttons .btn {
+    padding: 10px 20px;
+  }
+  .confirm{
+    background-color: #004EA0;
+    color: #FFFFFF;
+  }
+  .delete{
+    background-color: #F5FAFF;
+    color: #004EA0;
   }
   

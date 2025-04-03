@@ -6,8 +6,9 @@ import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux'; 
-import { registerStart, registerSuccess, registerFailure } from '../../../redux/store/authSlice'; 
+import { registerStart, registerSuccess, registerFailure, clearError } from '../../../store/authSlice'; 
 import { useRouter } from 'next/navigation';
+import { requestDeviceToken } from '../../../util/firebase.js';
 export default function SignUpForm() {
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.error);
@@ -36,7 +37,11 @@ export default function SignUpForm() {
     dispatch(registerStart());  
   
     try {
-      const response = await fetch('https://api.bridgeit.site/api/register', {
+         const deviceToken = await requestDeviceToken();
+            if (!deviceToken) throw new Error("Device token retrieval failed.");
+      
+            console.log("Device Token:", deviceToken);
+      const response = await fetch('https://bridge-it-backend-main-tfxagd.laravel.cloud/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,6 +50,7 @@ export default function SignUpForm() {
           name: formData.fullName,
           email: formData.email,
           password: formData.password,
+          device_token: deviceToken
         }),
       });
   
@@ -72,65 +78,70 @@ export default function SignUpForm() {
     window.location.href = 'https://api.bridgeit.site/api/register/github';
   };
 
-  return (
-    <div >
-    <form onSubmit={handleSubmit}>
-      <h5 className="fw-bold mt-3 text-dark" >New account</h5>
-      <p className="fw-bold text-muted " style={{fontSize:"13px"}}>Start your journey from here</p>
-      <p className="fw-bold text-dark" style={{fontSize:"14px"}}>
-        Already have an account?{' '}
-        <Link href="./login" style={{ textDecoration: "underline", fontWeight: "bold", color: "#0b56a4" }}>
-          Log in
-        </Link>
-      </p>
-      <div className="form-group name">
-        <label>Full Name</label>
-        <input
-          type="text"
-          name="fullName"
-          className="form-control"
-          placeholder="Enter your first and last name"
-          value={formData.fullName}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group email">
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          className="form-control"
-          placeholder="Enter your email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group pass">
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          className="form-control"
-          placeholder="Enter your password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      {errorMessage && <p className="text-danger">{errorMessage}</p>}
-      {successMessage && <p className="text-success">{successMessage}</p>}
-      <Button type="submit " className=" submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Submitting...' : 'Sign up'}
-      </Button>
-      <Link href="./signup_school">
-        <h5 className='schoollink' style={{ color: "#004ea0", fontSize: ".9rem", fontWeight: "bolder" }}>
-          Register as Company or school
-        </h5>
-      </Link>
+  const handleClearError = () => {
+    dispatch(clearError());
+  };
 
-      <div style={{ marginTop: "10px", color: "#6b7384" }}>_______________ or With _______________</div>
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h5 className="fw-bold mt-3 text-dark">New account</h5>
+        <p className="fw-bold text-muted" style={{fontSize:"13px"}}>Start your journey from here</p>
+        <p className="fw-bold text-dark" style={{fontSize:"14px"}}>
+          Already have an account?{' '}
+          <Link href="./login" onClick={handleClearError} style={{ textDecoration: "underline", fontWeight: "bold", color: "#0b56a4" }}>
+            Log in
+          </Link>
+        </p>
+        <div className="form-group name">
+          <label>Full Name</label>
+          <input
+            type="text"
+            name="fullName"
+            className="form-control"
+            placeholder="Enter your first and last name"
+            value={formData.fullName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group email">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group pass">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            className="form-control"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        {errorMessage && <p className="text-danger">{errorMessage}</p>}
+        {successMessage && <p className="text-success">{successMessage}</p>}
+        <Button type="submit" className="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Sign up'}
+        </Button>
+      
+        <Link href="./signup_school">
+          <h5 className='schoollink' style={{ color: "#004ea0", fontSize: ".9rem", fontWeight: "bolder" }}>
+            Register as Company or school
+          </h5>
+        </Link>
+
+        <div style={{ marginTop: "10px", color: "#6b7384" }}> __________ or With __________  </div>
 
       <div className='icons' style={{ marginTop: "10px", display: "flex", justifyContent: "center" }}>
         <span onClick={handleGithubRegister}>

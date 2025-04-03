@@ -1,0 +1,16 @@
+.answer {
+    background-image: linear-gradient(rgb(0, 37, 114), #007BFF); 
+    color: white;
+}
+.questionform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.no-border {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  

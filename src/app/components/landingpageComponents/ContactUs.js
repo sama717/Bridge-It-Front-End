@@ -85,7 +85,7 @@ export default function ContactUs() {
                 <Row>
                   <Col md={6}>
                     <Form.Group controlId="formName" className="mb-3">
-                      <Form.Label className='label'>Name</Form.Label>
+                      <Form.Label className='labell'>Name</Form.Label>
                       <Form.Control 
                         type="text" 
                         name="name" 
@@ -97,7 +97,7 @@ export default function ContactUs() {
                   </Col>
                   <Col md={6}>
                     <Form.Group controlId="formEmail" className="mb-3">
-                      <Form.Label className='label'>Email</Form.Label>
+                      <Form.Label className='labell'>Email</Form.Label>
                       <Form.Control 
                         type="email" 
                         name="email" 
@@ -109,7 +109,7 @@ export default function ContactUs() {
                   </Col>
                 </Row>
                 <Form.Group controlId="formSubject" className="mb-3">
-                  <Form.Label className='label'>Subject</Form.Label>
+                  <Form.Label className='labell'>Subject</Form.Label>
                   <Form.Control 
                     type="text" 
                     name="subject" 
@@ -119,7 +119,7 @@ export default function ContactUs() {
                   />
                 </Form.Group>
                 <Form.Group controlId="formMessage" className="mb-3">
-                  <Form.Label className='label'>Message</Form.Label>
+                  <Form.Label className='labell'>Message</Form.Label>
                   <Form.Control 
                     style={{ resize: "none" }} 
                     as="textarea" 

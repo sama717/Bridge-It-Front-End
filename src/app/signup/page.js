@@ -3,7 +3,7 @@
 import styles from '../page.module.css';
 import SignUpForm from '../components/authCopmonets/SignUpForm';
 import { Provider } from 'react-redux';
-import store from '../../redux/store/page'; 
+import store from '../../store/page'; 
 
 export default function SignUpPage() {
     return (
@@ -21,12 +21,12 @@ export default function SignUpPage() {
                                 <img className={styles.logo} src='projectlogo.png' alt='Logo' />
                             </div>
                             <div className={styles.overlayText}>
-                                <div style={{ display: "block" }}>
-                                    <div className='fw-bold ms-3 fs-3'> Welcome back</div>
-                                    <div className='fs-6 ms-3'>Our mission is to simplify the management of university</div>
-                                    <div className='fs-6 ms-3'>projects by providing an intuitive, all-in-one platform.</div>
-                                </div>
-                            </div>
+              <div style={{display:"block"}}>
+                <div className='fw-bold ms-3 fs-3'> Start your journey with us!</div>
+                <div className='fs-6 ms-3'>Our mission is to simplify the management of university</div>
+                <div className='fs-6 ms-3'>projects by providing an intuitive, all-in-one platform.</div>
+              </div> 
+            </div>
                         </div>
                     </div>
                 </div>

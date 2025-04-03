@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 export default function HandlePlatformSignup() {
   const router = useRouter(); 
@@ -71,7 +70,7 @@ export default function HandlePlatformSignup() {
               </Link>
             </div>
             <div style={{ display: "flex",height: "100px", justifyContent: "flex-start",alignItems: "flex-end" }}>
-                     <Image src="copyrights.png" style={{ height: "12px"}} alt='copyright'/>
+                     <img src="copyrights.png" style={{ height: "12px"}}/>
                     </div>
           </form>
         </div>
@@ -79,7 +78,7 @@ export default function HandlePlatformSignup() {
           <div className={styles.overlay}>
             <div className={styles.overlayText}>
               <div className={styles.logoContainer}>
-                <Image className={styles.logo} src='/projectlogo.png' alt='Logo' />
+                <img className={styles.logo} src='/projectlogo.png' alt='Logo' />
               </div>
               <div style={{ display: "block" }}>
                 <div className='fw-bold ms-3 fs-3'>Welcome back</div>

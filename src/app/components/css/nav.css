@@ -1,0 +1,203 @@
+/* General Logo Styles */
+
+.logo-1 {
+    display: inline;
+    width: 100px;
+    height: 71px;
+  }
+  
+  .logo-2 {
+    width: 100px;
+    height: 71px;
+    display: none;
+  }
+
+  .navbar{
+    background-color: #fff !important;
+  }
+  
+ 
+  .comp-school {
+    background: linear-gradient(to right, #002572, #007bff) !important;
+    color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  .nav-link {
+    font-size: 1rem !important;
+    position: relative;
+  }
+  
+  .active-link .nav-link {
+    color: #000;
+  }
+  
+  
+  .nav-link::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 4px;
+    border-radius: 13px;
+    background-image: linear-gradient(to right, #FFC107, #BD8F05, #FCBF07);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 90%;
+  }
+  
+  .active-link .nav-link::after {
+    width: 90%;
+    transition: none;
+  }
+  
+  /* Access Buttons */
+  .access-buttons {
+    display: flex;
+    align-items: center;
+    width: 33%;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .gradient-icon {
+    width: 2.5em;
+    height: 2.5em;
+    background: linear-gradient(to right, #FFC107, #997407);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='currentColor' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='currentColor' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-clip: border-box;
+  }
+  
+
+  .start-btn{
+    width: 190px;
+    /* min-width: 129px; */
+    background-color: #004EA0 !important;
+  }
+
+  .start-btn:hover{
+    background-color: #007bff !important;
+  }
+
+  .navbar-toggler{
+    border: none !important;
+  }
+
+  .navbar-toggler{
+    border: none !important;
+  }
+
+  .btn{
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 7px;
+    border: none;
+  }
+
+  .btn-light{
+    width: 100px;
+    min-width: 100px;
+    color: #004EA0 !important;
+    background-color: #F5FAFF !important;
+    transition: all 0.3s;
+  }
+
+  .btn-light:hover{
+    background-color: #bfd9f2 !important;
+  }
+
+  .login-btn{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  /* EN Language Link Styling */
+  .en-link {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 1rem;
+  }
+  
+  .en-span {
+    display: inline-block;
+    transform: translateY(10%);
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 991px) {
+    /* Swap logos in smaller screens */
+    .logo-1 {
+      display: none;
+    }
+    .logo-2 {
+      display: inline;
+      width: 80px;
+      height: auto;
+    }
+  
+    /* Collapse link animation for mobile */
+    .nav-link::after {
+      content: '';
+    }
+  
+    .nav-link:hover::after {
+      width: 0;
+    }
+  
+    .active-link .nav-link::after {
+      width: 0;
+      transition: none;
+    }
+  
+    /* Mobile Navbar Alignment Fix */
+    .navbar-nav {
+      margin-left: 2em !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-collapse {
+      background-color: white;
+      padding: 1rem;
+    }
+  
+    .access-buttons {
+      width: 100%;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav {
+      margin-left: 0 !important;
+    }
+  
+    .access-buttons {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .btn {
+      margin: 0.5em;
+    }
+  }
+  
+.nav-item{
+  font-size: 12px;
+}
+

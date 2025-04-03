@@ -57,6 +57,7 @@ export default function Home() {
         if (errorResponse.message) {
           Object.entries(errorResponse.message).forEach(([field, errors]) => {
             console.error(`${field}: ${errors.join(', ')}`);
+
           });
         }
         return;

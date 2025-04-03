@@ -1,0 +1,487 @@
+.group-details-container {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .team-member {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+strong{
+    color: #00000066;
+    font-size: 14px;
+
+}  
+.more-btn {
+  background: white;
+  /* border: none; */
+  color: dark-gray;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  border-radius:50%;
+}
+
+.options-menu {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.options-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.options-menu button:hover {
+  background: #f1f1f1;
+  color: #007BFF;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-buttons .btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buttons .confirm {
+  background-color: #004EA0;
+  color:#FFFFFF;
+}
+
+.modal-buttons .confirm:hover {
+  background-color: #F5FAFF;
+  color: #004EA0;
+}
+
+.modal-buttons .delete {
+  background-color: #F5FAFF;
+  color: #004EA0;
+  border: none;
+}
+
+.modal-buttons .delete:hover {
+  background-color: #004EA0;
+  color:#FFFFFF;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.modal-buttons .btn {
+  padding: 10px 20px;
+}
+.confirm{
+  background-color: #004EA0;
+  color: #FFFFFF;
+}
+.delete{
+  background-color: #F5FAFF;
+  color: #004EA0;
+}
+
+.share , .more-btn{
+  width:40px;
+  height:40px;
+  background-color:white;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+align-items:center;
+position: absolute;
+ top:7%;
+ right: 6%;
+}
+.more-btn{
+  right: 1%;
+}
+.col strong{
+  font-size: 12px;
+}
+.col p{
+  font-size: 14px;
+}
+.out{
+  position: relative;
+}
+.editcircle{
+  background-color: #DBECFE;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 70%;
+}
+.card-description{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-description p{
+  font-size: 0.8rem;
+  transform: translateY(50%);
+}
+.outprogress{
+  position: relative;
+}
+.card-details{
+  display: flex;
+  margin-top: -30px;
+}
+
+.chat , .file{
+  width:5%;
+  font-size: 1rem;
+  margin-left: 5px;
+  background-color:#FFFFFF ;
+ 
+}
+
+.complete{
+  width: 15%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  background-color: #FFFFFF;
+}
+@media screen and (max-width: 800px) {
+  .chat,.file {
+    width:15%;
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  .complete{
+    width: 45%;
+    margin-bottom: 30px;
+  }
+  .share{
+    top:25%;
+ right: 20%;
+  }
+ .more-btn{
+  top:25%;
+  right: 5%;
+ } 
+ .options-menu{
+  top:35%;
+  right: 5%;
+ }
+}
+
+.progress-btn span{
+  display: inline-block;
+  font-size: .8rem;
+}
+
+.card-details .btn{
+  border-radius: 0 0 5px 5px !important;
+}
+
+.btn-primary{
+  background-image: linear-gradient(to right, #002572, #007bff) !important;
+  padding: 0.5em 1em !important;
+  transition: all 0.3s;
+}
+
+.btn-secondary{
+  background-color: #F5FAFF !important;
+  border: none;
+  padding: 0.5em 1em !important;
+  transition: all 0.3s;
+  color: #4B5563;
+}
+
+.btn-primary:hover , .btn-secondary:hover{
+  transform: scale(1.1);
+}
+
+.btn-secondary:hover{
+  color: #4B5563;
+}
+
+.btn-outline-secondary {
+  border-color: #E5E7EB !important;
+  border-radius: 10px !important;
+  color: #3B95F6;
+  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.btn-outline-secondary span {
+  color: #23235F;
+}
+
+.btn-outline-secondary:hover {
+  background-image: linear-gradient(to right, #002572, #007bff) !important;
+  color: #E5E7EB;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:hover span {
+  color: #E5E7EB;
+}
+
+.btn-outline-primary {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  color: #004EA0;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Ensure gradient stays within border */
+  z-index: 1;
+  border: none;
+  padding: 0.5em 1em;
+}
+
+.btn-outline-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  padding: 2px; /* Adjust padding for border thickness */
+  background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1; /* Position behind button content */
+}
+
+.btn-outline-primary:hover {
+  color: #fff; /* Adjust hover color as needed */
+  background-image: linear-gradient(to right, #002572, #007bff) !important;
+}
+
+.workspace-buttons .btn-secondary {
+  position: relative;
+  color: transparent; 
+  background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border: none !important;
+  font-size: 1rem !important;
+  padding: 0.5em 0.8em !important;
+  overflow: hidden; 
+}
+
+.workspace-buttons .btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F5FAFF; 
+  z-index: -1; 
+  border-radius: inherit; 
+}
+.addNewTask{
+  background-color: #004EA0;
+  color: white;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ border: none;
+ border-radius: 10px;
+ margin-top: 10px;
+}
+
+.modalTitle{
+  color: #202020;
+  font-weight: bold;
+  font-size: 20px;
+}
+.modalLabel{
+  text-align: left;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #6B7280;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+.addTask , .cancleTask{
+  width: 45%;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.cancleTask{
+  background-color: #F5FAFF;
+  color: #004EA0;
+}
+.addTask{
+  background-color: #004EA0;
+  color: #F5FAFF;
+}
+.OPTION{
+  color: #00000066;
+  font-size: 12px;
+}
+.radio{
+  color: #6B7280;
+}
+.area{
+  resize: none;
+}
+.modal-dialog {
+  position: fixed;
+  top: 2%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  margin: 0; 
+  max-width: 600px; 
+  width: 100%;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  transition: border-color 0.3s ease-in-out;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(90deg, #002572, #007BFF) border-box;
+}
+
+input[type="radio"]:checked {
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(90deg, #002572, #007BFF) border-box;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(90deg, #002572, #007BFF); 
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.modal-header .btn-close {
+  background-color: #E7E7E7; 
+  border-radius: 50%; 
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; 
+}
+
+.modal-header .btn-close:hover {
+  background-color: #d6d6d6; 
+}

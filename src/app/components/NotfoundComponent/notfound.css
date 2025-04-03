@@ -1,9 +1,55 @@
-body,html{
+/* notfound.css */
+
+body, html {
     background-color: white;
+    margin: 0;
+    padding: 0;
 }
+
 .container {
     display: flex;
     justify-content: center; 
     align-items: center; 
     height: 100vh; 
+}
+
+.notfound-container {
+    background-color: white;
+}
+
+.notfound-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+}
+
+.first-col {
+    text-align: left;
+}
+
+.second-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    .notfound-row {
+        grid-template-columns: 1fr; 
+    }
+
+    .second-col {
+        display: none; 
+    }
+
+    .first-col img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .second-col img {
+        max-width: 100%;
+        height: auto;
+    }
 }

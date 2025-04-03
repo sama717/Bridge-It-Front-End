@@ -1,0 +1,222 @@
+body{
+    background-color: whitesmoke;
+    position: relative;
+}
+.container{
+    background-color:white;
+    width: 40%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top:10%;
+    right: 30%;
+    border-radius: 3%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+}
+.div{
+    display: flex;
+    justify-content: center;
+}
+.workspace-cards{
+    width: 90%;
+    height: 50%;
+}
+.workspace-cards .card{
+    display: flex ;
+    justify-content: center;
+    align-content: center;
+    border-bottom: none !important;
+    border-radius: 13px;
+    cursor: pointer;
+}
+.workspace-cards .card .card-body{
+    border-bottom: none !important;
+}
+.img-container{
+    width: 100%;
+    height: 222px; 
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+
+.img-container img{
+    width: 95%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 222px;  
+    overflow: hidden; 
+    padding: 5px;
+}
+
+.card-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-description p{
+    font-size: 0.8rem;
+    transform: translateY(50%);
+}
+
+.card-buttons{
+    display: flex;
+}
+.btn-1{
+    width:10%;
+    font-size: 1rem;
+}
+
+.btn-2{
+    width: 80%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-btn{
+    text-align: left;
+}
+.progress-btn span{
+    display: inline-block;
+    font-size: .8rem;
+}
+
+.card-buttons .btn{
+    border-radius: 0 0 10px 10px !important;
+}
+
+.btn-primary{
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+    padding: 0.5em 1em !important;
+    transition: all 0.3s;
+}
+
+.btn-secondary{
+    background-color: #F5FAFF !important;
+    border: none;
+    padding: 0.5em 1em !important;
+    transition: all 0.3s;
+    color: #4B5563;
+}
+
+.btn-primary:hover , .btn-secondary:hover{
+    transform: scale(1.1);
+}
+
+.btn-secondary:hover{
+    color: #4B5563;
+}
+
+.btn-outline-secondary {
+    border-color: #E5E7EB !important;
+    border-radius: 10px !important;
+    color: #3B95F6;
+    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+.btn-outline-secondary span {
+    color: #23235F;
+}
+
+.btn-outline-secondary:hover {
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+    color: #E5E7EB;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:hover span {
+    color: #E5E7EB;
+}
+
+.btn-outline-primary {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    color: #004EA0;
+    transition: all 0.3s ease;
+    overflow: hidden; 
+    z-index: 1;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+.btn-outline-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px; 
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1; 
+}
+
+.btn-outline-primary:hover {
+    color: #fff; 
+    background-image: linear-gradient(to right, #002572, #007bff) !important;
+}
+
+.workspace-buttons .btn-secondary {
+    position: relative;
+    color: transparent; 
+    background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    border: none !important;
+    font-size: 1rem !important;
+    padding: 0.5em 0.8em !important;
+    overflow: hidden; 
+}
+
+.workspace-buttons .btn-secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F5FAFF; 
+    z-index: -1; 
+    border-radius: inherit; 
+}
+.cancel{
+background-color: #F5FAFF;
+color: #004EA0;
+border: none;
+width: 45%;
+padding: 5px;
+border-radius: 5px;
+margin-bottom: 40px;
+box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.25);
+
+}
+.join{
+    background-color: #004EA0;
+    color:#FFFFFF;
+    border:none;
+    width: 45%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}

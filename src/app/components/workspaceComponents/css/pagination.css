@@ -1,0 +1,26 @@
+/* Default pagination item styles with your gradient */
+.custom-pagination-item {
+    background: linear-gradient(90deg, #FFC107, #997404) !important;
+    color: black !important; /* Ensure the text color is applied */
+    border: none !important; /* Remove default border */
+  }
+  
+  /* Active pagination item - override blue background */
+  .custom-pagination-item.active {
+    background: linear-gradient(90deg, #FFC107, #997404) !important; /* Ensure active item has gradient */
+    color: black !important; /* Override active item text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important; /* Optional: Add shadow for active item */
+  }
+  
+  /* Hover state */
+  .custom-pagination-item:hover {
+    background: linear-gradient(90deg, #FFC107, #997404) !important;
+    color: black !important; /* Ensure text color is applied on hover */
+  }
+  
+  /* Ensure the active pagination item gets the correct styles */
+  .pagination-item.active.custom-pagination-item {
+    background: linear-gradient(90deg, #FFC107, #997404) !important;
+    color: black !important;
+  }
+  

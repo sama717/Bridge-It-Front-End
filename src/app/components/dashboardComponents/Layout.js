@@ -4,7 +4,7 @@
 import Sidebar from './Sidebar';
 import Nav from './Nav';
 import '../../dashboard/css/dashboard.css';
-import withAuth from '../withAuth'; // Adjust the import path if needed
+import withAuth from '../withAuth'; 
 
 const Layout = ({ children }) => {
   return (
@@ -19,5 +19,4 @@ const Layout = ({ children }) => {
     </div>
   );
 };
-
 export default withAuth(Layout); 

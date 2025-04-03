@@ -30,7 +30,7 @@ export default function ForgetPassword() {
       return;
     }
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/password/change', {
+      const response = await fetch('https://api.bridgeit.site/api/password/change', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

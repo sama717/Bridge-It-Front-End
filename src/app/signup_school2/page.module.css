@@ -29,7 +29,7 @@
 }
 
 .imageContainer {
-  background-image: url('../images/signup.png');
+  background-image: url('/signup.png');
   background-size: cover;
   background-position: center;
   position: relative;

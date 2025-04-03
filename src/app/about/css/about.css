@@ -8,7 +8,7 @@ body{
 }
 
 .main-sec{
-    background-image: url(../../../../public/aboutbg.png);
+    background-image: url('/aboutbg.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

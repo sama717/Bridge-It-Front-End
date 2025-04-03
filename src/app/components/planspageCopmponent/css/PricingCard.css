@@ -16,6 +16,9 @@
     position: relative; 
     margin-bottom: 20px;
 }
+.col{
+    display: flex;
+}
 
 ul {
     list-style-type: none; 
@@ -89,6 +92,16 @@ del{
     z-index: 10; 
     transform: translateY(-33px); 
 }
+
+
+@media (max-width: 580px) {
+   .col{
+    display: flex;
+    justify-content: center;
+   } 
+}
+
+
 
 
 

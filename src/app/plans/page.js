@@ -1,29 +1,37 @@
-"use client"; // Ensures this page only renders on the client-side
 
-import './page.module.css';
-import Header from '../components/landingpageComponents/Header/Navbar';
+"use client";
+import './page.module.css'
+import Navbar from '../components/landingpageComponents/Navbar'
 import PricingHeader from '../components/planspageCopmponent/PricingHeader';
 import PricingCards from '../components/planspageCopmponent/PricingCards';
 import FeatureTable from '../components/planspageCopmponent/FeatureComparisonTable';
-import Footer from '../components/landingpageComponents/Footer';
+import Footer from '../components/landingpageComponents/Footer'
 import { useEffect } from 'react';
-
-export default function Plans() {
-    useEffect(() => {
-        document.body.classList.add('plans-page');
-
-        return () => {
-            document.body.classList.remove('plans-page');
-        };
-    }, []);
-
-    return (
+export default function Home(){
+  useEffect(() => {
+    document.body.classList.add('landing-page');
+    return () => {
+      document.body.classList.remove('landing-page');
+    };
+  }, []);
+    return(
+      <div>
+        <h1>
+          <Navbar/>
+        </h1>
         <div>
-            <Header />
-            <PricingHeader />
-            <PricingCards />
-            <FeatureTable />
-            <Footer />
+          <PricingHeader/>
         </div>
+        <div>
+          <PricingCards/>
+        </div>
+        <div>
+          <FeatureTable/>
+        </div>
+        <div>
+          <Footer/>
+        </div>
+      
+      </div>
     );
 }

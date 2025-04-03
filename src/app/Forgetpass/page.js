@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux'; 
-import { setEmail } from '../../redux/store/authSlice';
+import { setEmail } from '../../store/authSlice';
 import { useRouter } from 'next/navigation';
 export default function ForgetPassword() {
   const dispatch = useDispatch(); 

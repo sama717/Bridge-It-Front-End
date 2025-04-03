@@ -1,141 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+/* @font-face {
+    font-family: 'DG Baysan';
+    src: url(../../public/fonts/DG\ Baysan\ Regular.ttf);
+} */
 
 @font-face {
-  font-family: degular;
-  src: url(../../public/fonts/DegularDemo-Bold.otf);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  font-family: "Open Sans", serif;
-}
-
-:root {
-  --header-height: 123px;
-  --main-color: #151414;
-  --heading-text-color: #f3c77c;
-  --text-color: #e7cfb1;
-  --alt-font: degular;
-  --alt-font-3: "Space Grotesk";
-  --section-margin: 50px;
-  --main-margin: 150px;
-  --border-color: #262626;
-}
-
-body {
-  background-color: var(--main-color) !important;
-}
-
-.overlay {
-  position: relative;
-  z-index: 33;
-}
-
-.overlay::after {
-  content: '';
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: 99;
+    font-family: 'DG Baysan';
+    src: url('/fonts/DG Baysan Regular.ttf');
 }
 
 
-.hero-section {
-  background: rgb(21, 20, 20);
-  background: linear-gradient(90deg, rgba(21, 20, 20, 1) 0%, rgba(34, 33, 33, 1) 50%, rgba(34, 33, 33, 1) 100%);
-  position: relative;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  --color: rgba(114, 114, 114, 0.3);
-  background-color: #191a1a;
-  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
-  background-size: 200px 200px;
-  left: 0;
-  top: 0;
-  z-index: -1;
-}
-
-.main-button {
-  width: 250px;
-  background-color: transparent;
-  border: 1px solid var(--heading-text-color);
-  height: 90px;
-  border-radius: 90px;
-  color: var(--heading-text-color);
-  font-weight: 100;
-  font-size: 20px;
-  margin-left: 10px;
-  text-transform: uppercase;
-}
-
-.animation-button {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  place-content: center;
-}
-
-.animation-button::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--heading-text-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  top: 100%;
-  transition: .3s ease-in-out;
-  z-index: 1;
-}
-
-.animation-button span.span-container {
-  height: 20px;
-  display: block;
-  top: 0px;
-  position: relative;
-  transition: top .4s ease-in-out;
-}
-
-.animation-button:hover::before {
-  transform: translateX(-50%) scale(10);
-}
-
-.animation-button:hover .span-container {
-  top: -57px
-}
-
-.animation-button:hover .span-container>span {
-  animation: pulse 1 .3s ease-in-out;
-  color: var(--main-color);
-}
-
-.animation-button span:not(.span-container) {
-  display: block;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 9;
-}
-
-
-@keyframes pulse {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: DG Baysan, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }

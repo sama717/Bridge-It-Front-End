@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+"use client";
 import React from 'react';
 import '../components/css/internet.css'
 import '../components/css/responsive.css'
-import Image from 'next/image';
 
 const NoInternetConnection = () => {
   const handleRefresh = () => {
@@ -12,7 +14,7 @@ const NoInternetConnection = () => {
     <div className='internet-section'>
       <div class="internet-block">
         <div className='internet-left'>
-          <Image src='/bridge-it-logo.png' className='mb-4' alt='Logo'/>
+          <img src='/bridge-it-logo.png' className='mb-4'/>
           <h1 className='mb-3'>There is no Internet connection</h1>
           <p>Please check your network and try again.</p>
           <div className='mt-5'>
@@ -20,7 +22,7 @@ const NoInternetConnection = () => {
           </div>
         </div>
         <div className='internet-right'>
-          <Image src='/dino-img.png' alt='Dino'/>
+          <img src='/dino-img.png'/>
         </div>
       </div>
     </div>

@@ -6,19 +6,26 @@ import { FaGraduationCap } from 'react-icons/fa';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; 
 import styles from './page.module.css'; 
-import { Button } from 'react-bootstrap';
 
 export default function Home() {
-  const [isCapSelected, setIsCapSelected] = useState(false);
+  const [selectedAccount, setSelectedAccount] = useState(''); 
   const router = useRouter(); 
 
-  const handleGraduationCapClick = () => {
-    setIsCapSelected(true);
+  const handleCompanyClick = () => {
+    setSelectedAccount('company');
+  };
+
+  const handleSchoolClick = () => {
+    setSelectedAccount('school');
   };
 
   const handleNextClick = () => {
-    if (isCapSelected) {
+    if (selectedAccount === 'school') {
       router.push('/signup_school2'); 
+    } else if (selectedAccount === 'company') {
+      router.push('/signup_company2'); 
+    } else {
+      console.log("No account type selected");
     }
   };
 
@@ -26,53 +33,53 @@ export default function Home() {
     <div className='container'>
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
-        {/* <div className={styles.formConytent}> */}
-          <form style={{ width: "70%" }}>
-            <h5 style={{marginTop:"60px"}} className="fw-bold text-dark">New account</h5>
-            <p style={{fontWeight:"bolder", color:"#4b5563", marginBottom:"30px",fontSize:"14px"}}>Start your journey from here</p>
-            <p className="fw-bold text-dark " style={{fontSize:"14px"}}>
-              Already have an account?{' '}
-              <Link href="/login" style={{textDecoration:"underline",fontWeight:"bold",color:"#0b56a4"}}>
-                Log in
+          <div className={styles.formConytent}>
+            <form style={{ width: "100%" }}>
+              <h5 style={{marginTop:"60px"}} className="fw-bold text-dark">New account</h5>
+              <p style={{fontWeight:"bolder", color:"#4b5563", marginBottom:"30px",fontSize:"14px"}}>Start your journey from here</p>
+              <p className="fw-bold text-dark" style={{fontSize:"14px"}}>
+                Already have an account?{' '}
+                <Link href="/login" style={{textDecoration:"underline",fontWeight:"bold",color:"#0b56a4"}}>
+                  Log in
+                </Link>
+              </p>
+              <p style={{color:"#374151"}}>Account Type</p>
+              <div className={styles.iconContainer}>
+                <div 
+                  className={`${styles.icon} ${selectedAccount === 'company' ? styles.selectedIcon : ''}`} 
+                  onClick={handleCompanyClick}
+                >
+                  <IoBusinessOutline size={60} color="#0652a2" />
+                  <p style={{ marginTop: '8px', color:"#565f6d", fontWeight:"500" }}>Company</p>
+                  {selectedAccount === 'company' && <div className={styles.checkmark}>✓</div>}
+                </div>
+                <div 
+                  className={`${styles.icon} ${selectedAccount === 'school' ? styles.selectedIcon : ''}`} 
+                  onClick={handleSchoolClick}
+                >
+                  <FaGraduationCap size={60} color="#0652a2" />
+                  <p style={{ marginTop: '8px', color:"#565f6d", fontWeight:"500" }}>School</p>
+                  {selectedAccount === 'school' && <div className={styles.checkmark}>✓</div>}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={handleNextClick}
+                className={styles.button}
+                disabled={!selectedAccount}
+              >
+                Next
+              </button>
+              <Link href="/signup" passHref>
+                <span className={styles.registerLink}>
+                  Register as Regular User
+                </span>
               </Link>
-            </p>
-            <p style={{fontWeight:"bolder",color:"#374151"}}>Account Type</p>
-            <div className={styles.iconContainer} style={{ columnGap: "20%", marginTop: "30px", display: 'flex', justifyContent: 'space-around' }}>
-              <div style={{ textAlign: 'center' }}>
-                <IoBusinessOutline size={80} color="#0652a2" />
-                <p style={{ marginTop: '8px', color:"#565f6d", fontWeight:"bolder" }}>Company</p>
-              </div>
-
-              <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={handleGraduationCapClick}>
-                <FaGraduationCap size={80} color={isCapSelected ? "#0652a2" : '#0652a2'} />
-                <p style={{ marginTop: '8px', color:"#565f6d", fontWeight:"bolder" }}>School</p>
-              </div>
-            </div>
-
-            <Button
-              onClick={handleNextClick}
-              style={{
-                backgroundColor: isCapSelected ? "#004EA0" : "#004EA0",
-                width: "100% ",
-                fontWeight: "bolder",
-                
-                cursor: isCapSelected ? "pointer" : "not-allowed"
-              }}
-            
-            >
-              Next
-            </Button>
-
-            <Link href="/" passHref>
-              <h5 className='schoollink' style={{color:"#004ea0", fontSize:".7rem", fontWeight:"bolder", marginTop:"10px"}}>
-                Register as Regular User
-              </h5>
-            </Link>
-            <div className="copyright" >
-          All Copyrights go to Bridge It © 2024
-        </div> 
-          </form>
-          {/* </div> */}
+              <div className="copyright">
+                All Copyrights go to Bridge It © 2024
+              </div> 
+            </form>
+          </div>
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.overlay}>
@@ -82,7 +89,7 @@ export default function Home() {
             <div className={styles.overlayText}>
               <div style={{display:"block"}}>
                 <div className='fw-bold ms-3 fs-3'> Start your journey with us!</div>
-                <div className='fs-6 ms-3'>our mission is to  simplfiy the management of university</div>
+                <div className='fs-6 ms-3'>Our mission is to simplify the management of university</div>
                 <div className='fs-6 ms-3'>projects by providing an intuitive, all-in-one platform.</div>
               </div> 
             </div>

@@ -1,7 +1,5 @@
-"use client";
 import { useEffect } from "react";
-// import { messaging } from "../lib/firebase-config";
-import { messaging } from "../../util/firebase";
+import { messaging } from "../lib/firebase-config";
 import { getToken, onMessage } from "firebase/messaging";
 
 const NotificationPermission = () => {
@@ -11,9 +9,7 @@ const NotificationPermission = () => {
       try {
         const permission = await Notification.requestPermission();
         if (permission === "granted") {
-          const token = await getToken(messaging, {
-            vapidKey: "YOUR_VAPID_KEY",
-          });
+          const token = await getToken(messaging, { vapidKey: "YOUR_VAPID_KEY" });
           console.log("FCM Token:", token);
         } else {
           console.log("Notification permission denied.");

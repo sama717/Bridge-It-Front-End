@@ -1,0 +1,44 @@
+
+.nav-link .fa-icon {
+  font-size: .5em;
+  vertical-align: middle;
+  
+}
+.sidebar {
+  width: 250px;
+  background-color: #003B7A; 
+  height: 120vh;
+  border-right: 1px solid #e9ecef;
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #B8B8B8;
+  font-size: .7rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.nav-link.active {
+  background-image: linear-gradient(rgb(255, 251, 245),rgb(255, 255, 255) ); 
+  color: #003B7A;
+  border-radius: 20px;
+}
+
+.nav-icon {
+  font-size: 1.2em;
+  width: 24px; 
+  margin-right: 10px; 
+}
+.logout-link {
+  position: absolute;
+  color: #dc3545;
+  bottom: 0;
+  left: 10;
+}
+
+
+  

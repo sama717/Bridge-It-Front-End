@@ -1,18 +1,67 @@
-// /src/app/dashboard/workspace/page.js
-
-import Layout from '../../components/dashboardComponents/Layout';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../css/workspace.css';
-import Image from 'next/image';
-
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import { useEffect, useState } from "react";
+import Layout from "../../components/dashboardComponents/Layout";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../css/workspace.css";
+import Link from "next/link"; 
+import { useRouter } from "next/navigation";
 const Workspace = () => {
+  const [groups, setGroups] = useState([]);
+  const [sortedGroups, setSortedGroups] = useState([]);
+  const [isAscending, setIsAscending] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;  
+  const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  const router = useRouter();
+const handleGroupClick = (groupId) => {
+  router.push(`/dashboard/workspace/${groupId}`);
+
+};
+  useEffect(() => {
+    if (!token) return;
+    fetch("https://api.bridgeit.site/api/groups", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status) {
+          setGroups(data.data);
+          setSortedGroups(data.data);
+        }
+      })
+      .catch((error) => console.error("Error fetching groups:", error));
+  }, [token]);
+
+ const handleSort = () => {
+    const sorted = [...sortedGroups].sort((a, b) =>
+      isAscending
+        ? a.group.title.localeCompare(b.group.title)
+        : b.group.title.localeCompare(a.group.title)
+    );
+    setSortedGroups(sorted);
+    setIsAscending(!isAscending);
+  };
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // const currentGroups = groups.slice(indexOfFirstItem, indexOfLastItem);
+  const currentGroups = sortedGroups.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(groups.length / itemsPerPage);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <Layout>
-      <div className='workspace-container'>
-        <div>
-          <h1>Workspaces (XX)</h1>
-          <div className='my-5'>
-            <button className='btn btn-primary me-3'>
+      <div className="workspace-container">
+        <h1>Workspaces ({groups.length})</h1>
+        <div className='my-4'>
+             <button className='btn btn-primary me-2'>
               <i className="bi bi-clock-history me-2"></i>In Progress
             </button>
             <button className='btn btn-secondary'>
@@ -20,105 +69,200 @@ const Workspace = () => {
             </button>
           </div>
           <div className='workspace-buttons'>
-            <button className='btn btn-outline-primary'>
-              <i className="fa-solid fa-plus me-2"></i>New Workspace
-            </button>
+            <Link href='/dashboard/workspace/creategroup'>
+              <button className='btn btn-outline-primary'>
+                <i className="fa-solid fa-plus me-2"></i>New Workspace
+              </button>
+            </Link>
             <div className='edit-search'>
               <button className='btn btn-secondary'>
                 <i className="bi bi-toggles2 me-2"></i>Filter
               </button>
-              <button className='btn btn-secondary'>
-                <i className="bi bi-arrow-down-up me-2"></i>Sort
-              </button>
+               <button className='btn btn-secondary' onClick={handleSort}>
+              <i className={`bi bi-arrow-${isAscending ? "down" : "up"}-up me-2`}></i>Sort
+            </button>
             </div>
           </div>
-          <div className='workspace-cards my-5 container d-flex flex-wrap'>
-            <div className="card">
+        <div className="workspace-cards my-5 container d-flex flex-wrap">
+          {currentGroups.map(({ group }) => (
+            <div key={group.id} className="card" >
               <div className="img-container">
-                <button className='btn more-btn'><i className="bi bi-three-dots"></i></button>
-                <span>CATEGORY</span>
-                <Image src="/card-img.jpeg" className="card-img-top" alt="..." />
+              <button
+              className="btn more-btn"
+            >
+              <i className="bi bi-three-dots"></i>
+            </button>
+                <span>{group.category_id || "CATEGORY"}</span>
+                <div className="dynamic-img" style={{ backgroundColor: "#E5E7EB" }} onClick={() => handleGroupClick(group.id)}>
+                  <div style={{ color: "#9CA3AF" }}>{group.title.substring(0, 2).toUpperCase()}</div>
+                </div>
               </div>
               <div className="card-body">
                 <div className="card-text d-flex justify-content-between">
-                  <h5 className="card-title">Title</h5>
-                  <p className="card-title text-secondary">Last edit date</p>
+                  <h5 className="card-title">{group.title}</h5>
+                  <p className="card-title text-secondary">{new Date(group.deadline).toLocaleDateString()}</p>
                 </div>
-                <div className='card-description mt-2'>
-                  <p className="card-text text-secondary">8 Team Members</p>
-                  <Image src='/members-photo.png' alt="Team members"/>
-                </div>
-              </div>
-              <div className='card-buttons'>
-                <button className='btn btn-outline-secondary btn-1'><i className="bi bi-folder"></i></button>
-                <button className='btn btn-outline-secondary btn-1'><i className="bi bi-chat-dots"></i></button>
-                <button className='btn btn-outline-secondary btn-2'>
-                  <i className="fa-solid fa-spinner "></i>
-                  <div className='progress-btn'>
-                    <span>24% Complete</span>
-                    <div className="progress mb-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style={{height: '5px'}}>
-                    <div className="progress-bar" style={{ width: '25%' , height: '5px', backgroundColor: '#3B95F6'}}></div>
-                  </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="card">
-              <div className="Image-container">
-                <button className='btn more-btn'><i className="bi bi-three-dots"></i></button>
-                <span>CATEGORY</span>
-                <Image src="/card-img.jpeg" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <div className="card-text d-flex justify-content-between">
-                  <h5 className="card-title">Title</h5>
-                  <p className="card-title text-secondary">Last edit date</p>
-                </div>
-                <div className='card-description mt-2'>
-                  <p className="card-text text-secondary">8 Team Members</p>
-                  <Image src='/members-photo.png' alt="Team members"/>
+                <div className="card-description">
+                  <p className="card-text text-secondary">{group.users.length} Team Members</p>
+                  <img src="/members-photo.png" alt="Team members" />
                 </div>
               </div>
               <div className='card-buttons'>
-                <button className='btn btn-outline-secondary btn-1'><i className="bi bi-folder"></i></button>
-                <button className='btn btn-outline-secondary btn-1'><i className="bi bi-chat-dots"></i></button>
-                <button className='btn btn-outline-secondary btn-2'>
-                  <i className="fa-solid fa-spinner "></i>
+              <button className='btn btn-outline-secondary btn-1'><i className="bi bi-folder"></i></button>
+              <button className='btn btn-outline-secondary btn-1'><i className="bi bi-chat-dots"></i></button>
+              <button className='btn btn-outline-secondary btn-2'>
+               <i className="fa-solid fa-spinner"></i>
                   <div className='progress-btn'>
-                    <span>24% Complete</span>
-                    <div className="progress mb-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style={{height: '5px'}}>
-                    <div className="progress-bar" style={{ width: '25%' , height: '5px', backgroundColor: '#3B95F6'}}></div>
-                  </div>
-                  </div>
-                </button>
-              </div>
+                  <span>24% Complete</span>
+                  <div className="progress mb-2" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style={{ height: '5px' }}>
+               <div className="progress-bar" style={{ width: '25%', height: '5px', backgroundColor: '#3B95F6' }}></div>
             </div>
           </div>
+         </button>
+      </div>
+      </div>
+          ))}
+    </div>
+         <div className="pagination-container d-flex justify-content-center">
+         {totalPages > 1 &&
+           <nav aria-label="Page navigation">
+            <ul className="pagination">
+               {Array.from({ length: totalPages }, (_, index) => (
+                <li
+                  key={index}
+                  className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  <a className="page-link" href="#">
+                    {index + 1}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+}
         </div>
-        <div className="pagination-container d-flex justify-content-center">
-  <nav aria-label="Page navigation">
-    <ul className="pagination">
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&lt;</span>
-        </a>
-      </li>
-      <li className="page-item active"><a className="page-link" href="#">1</a></li>
-      <li className="page-item"><a className="page-link" href="#">2</a></li>
-      <li className="page-item"><a className="page-link" href="#">3</a></li>
-      <li className="page-item disabled"><span className="page-link">...</span></li>
-      <li className="page-item"><a className="page-link" href="#">10</a></li>
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&gt;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
-</div>
+        </div>
     </Layout>
   );
 };
-
 export default Workspace;
+
+// /* eslint-disable react-hooks/rules-of-hooks */
+// /* eslint-disable @next/next/no-img-element */
+// "use client";
+// import { useEffect, useState } from "react";
+// import Layout from "../../components/dashboardComponents/Layout";
+// import "bootstrap-icons/font/bootstrap-icons.css";
+// import "../css/workspace.css";
+// import Link from "next/link";
+// import { useRouter } from "next/navigation";
+
+// const Workspace = () => {
+//   const [groups, setGroups] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [filteredGroups, setFilteredGroups] = useState([]);
+//   const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+//   const router = useRouter();
+//   // const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+//   useEffect(() => {
+//     if (!token) return;
+//     fetch("https://api.bridgeit.site/api/groups", {
+//       method: "GET",
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//         "Content-Type": "application/json",
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         if (data.status) {
+//           setGroups(data.data);
+//           setFilteredGroups(data.data);
+//         }
+//       })
+//       .catch((error) => console.error("Error fetching groups:", error));
+//   }, [token]);
+
+//   const handleSearch = async (event) => {
+//     const searchTerm = event.target.value.trim();
+//     setSearchTerm(searchTerm);
+  
+//     if (!searchTerm) {
+//       setFilteredGroups(groups);
+//       return;
+//     }
+  
+//     try {
+//       const formData = new FormData();
+//       formData.append("name", searchTerm);
+  
+//       const response = await fetch("https://api.bridgeit.site/api/groups/searchedGroups", {
+//         method: "POST",
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//         body: formData,
+//       });
+  
+//       const data = await response.json();
+//       console.log("API Response:", data); // Debugging
+  
+//       if (!data || !data.data) {
+//         console.error("Unexpected API response format:", data);
+//         setFilteredGroups([]);
+//         return;
+//       }
+  
+//       const searchedGroups = data.data; // Make sure this is an array
+  
+//       const filtered = groups.filter((group) =>
+//         searchedGroups.some((searchedGroup) => searchedGroup.id === group.id)
+//       );
+  
+//       setFilteredGroups(filtered);
+//     } catch (error) {
+//       console.error("Error searching groups:", error);
+//       setFilteredGroups([]);
+//     }
+//   };
+  
+
+//   return (
+//     <Layout>
+//       <div className="workspace-container">
+//         <h1>Workspaces ({filteredGroups.length})</h1>
+//         <div className="search-bar my-3">
+//           <input
+//             type="text"
+//             className="form-control"
+//             placeholder="Search workspaces..."
+//             value={searchTerm}
+//             onChange={handleSearch}
+//           />
+//         </div>
+//         <div className="workspace-cards my-5 container d-flex flex-wrap">
+//           {filteredGroups.map(({ group }) => (
+//             <div key={group.id} className="card" onClick={() => router.push(`/dashboard/workspace/${group.id}`)}>
+//               <div className="img-container">
+//                 <button className="btn more-btn"><i className="bi bi-three-dots"></i></button>
+//                 <span>{group.category_id || "CATEGORY"}</span>
+//                 <div className="dynamic-img" style={{ backgroundColor: "#E5E7EB" }}>
+//                   <div style={{ color: "#9CA3AF" }}>{group.title.substring(0, 2).toUpperCase()}</div>
+//                 </div>
+//               </div>
+//               <div className="card-body">
+//                 <div className="card-text d-flex justify-content-between">
+//                   <h5 className="card-title">{group.title}</h5>
+//                   <p className="card-title text-secondary">{new Date(group.deadline).toLocaleDateString()}</p>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </Layout>
+//   );
+// };
+// export default Workspace;
+

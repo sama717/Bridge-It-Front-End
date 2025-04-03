@@ -1,0 +1,42 @@
+.imge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p2{
+    color:#626262;
+    text-align:center;
+    font-size:14px;
+    font-weight:300;
+    word-spacing:5px;
+}
+.invitee {
+    margin: auto;
+    width: 40%;
+    margin-top: 50px;
+}
+.responsive-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.start{
+    width:40% ;
+    font-size:13px;
+    margin-top:30px;
+    box-shadow:0 4px 10px #00000026, 0 6px 15px #FFFFFF40;
+}
+@media (max-width:700px){
+    .title{
+        font-size: 20px;
+    }
+    .invitee, .responsive-div,.start{
+        width: 90%;
+    }
+}
+

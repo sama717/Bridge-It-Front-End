@@ -10,6 +10,7 @@ export default function Verfiction(){
     <div className='container'>
     <div className={styles.gridContainer}>
       <div className={styles.formContainer}>
+      <div className={styles.formConytent}>
         <form >
           <div className={styles.imagec}>
             <img style={{marginTop:"50px"}} src='correct.png'/>
@@ -19,7 +20,7 @@ export default function Verfiction(){
           </div>
           <p style={{fontSize:"13px",textAlign:"center",fontWeight:"bold", color: "rgba(128, 128, 128,.8)"}} className='mt-3' >Your password has been cahnged successfully</p>
           <Link href="./login">
-          <Button className='mt-5'
+          <Button className=' submit mt-5'
                   style={{ backgroundColor: "#0652a2", width: "100%", fontWeight: "bolder",}} >
              Back to login
                 </Button>
@@ -28,6 +29,7 @@ export default function Verfiction(){
           All Copyrights go to Bridge It © 2024
         </div> 
         </form>
+        </div>
       </div>
       <div className={styles.imageContainer}>
       <div className={styles.overlay}>

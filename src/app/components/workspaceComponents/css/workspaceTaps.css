@@ -1,0 +1,14 @@
+.inporgress{
+    background-image: linear-gradient(rgb(0, 37, 114),rgb(0, 123, 255));
+    border-radius: 6px;
+    font-size: 13px;
+}
+.done{
+    color: #4B5563 !important;
+    font-size: 12px;
+    border: none;
+}
+.new{
+    color: #004EA0;
+    background-color: white;
+}

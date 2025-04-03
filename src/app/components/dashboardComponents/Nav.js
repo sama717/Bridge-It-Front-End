@@ -1,10 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-
-
-
-
 const Nav = () => {
   const pathname = usePathname();
 
@@ -18,7 +16,6 @@ const Nav = () => {
             setIsExpanded(prev => !prev);
         }
     };
-
     useEffect(() => {
         const handleResize = () => {
             const mobileView = window.innerWidth <= 550;
@@ -27,7 +24,6 @@ const Nav = () => {
                 setIsExpanded(false); // Collapse when resizing above 550px
             }
         };
-
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -39,11 +35,11 @@ const Nav = () => {
                   <button className="profile-button">
                         <div class="profile">
                           <div className="img-container">
-                              <img src='/profile-icon.jpeg' alt='Profile-img'/>
+                              <img src='/profile-icon.jpeg' />
                           </div>
                           <div className="profile-text">
                               <span className='welcome-message'>Welcome to bridge it</span>
-                              <span>User Name</span>
+                              <span>{localStorage.getItem('userName')}</span>
                           </div>
                         </div>
                           <div className="arrow-icon" onClick={toggleExpand}>
@@ -113,9 +109,6 @@ const Nav = () => {
             <div className="work-space-dropdown">
               <select className="form-select form-select-m" aria-label="Small select example">
                 <option selected>Work Space Name</option>
-                <option value="1" >One</option>
-                <option value="2" >Two</option>
-                <option value="3" >Three</option>
               </select>
               <i class="fa-solid fa-chevron-down dropdown-icon"></i>
             </div>

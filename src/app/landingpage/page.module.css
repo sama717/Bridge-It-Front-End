@@ -81,3 +81,35 @@
     clip-path: ellipse(50% 100% at 50% 50%); 
   }
   
+  /* Initial hidden state for each section */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly offset for smooth transition */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  visibility: hidden; /* Keeps element hidden initially */
+}
+
+/* Visible state when section scrolls into view */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0); /* Brings element to its original position */
+  visibility: visible; /* Makes element visible */
+}
+
+/* Initial hidden state */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease; /* Smooth 1-second transition */
+}
+
+/* Visible state */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  
+
+

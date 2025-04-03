@@ -10,7 +10,7 @@ export default function PricingCards() {
         <div className="pricing-cards">
         <Container fluid="md">
         <Row >
-          <Col  className=" mb-3 ">
+          <Col  className=" mb-3 col ">
             <div className="card golden">
                 <h2>
                 <img className='goldenicon' src='goldenicon.png'/>   Golden</h2>

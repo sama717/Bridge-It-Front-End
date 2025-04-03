@@ -1,22 +1,41 @@
-"use client"; // Ensures this page only renders on the client-side
-
-import '../about/css/about.css';
-import Link from 'next/link';
-import '../about/css/responsive.css';
-import Footer from '../components/landingpageComponents/Footer';
-// import Navbar from '../components/landingpageComponents/Navbar';
-import Header from '../components/landingpageComponents/Header/Navbar';
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+'use client'
+import { motion } from 'framer-motion';
+import '../about/css/about.css'
+import '../about/css/responsive.css'
+import Footer from '../components/landingpageComponents/Footer'
+import Navbar from '../components/landingpageComponents/Navbar'
 import { useState } from 'react';
-import Image from 'next/image'; // Import Image from next/image
-
+import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
+import '../../i18n';
+const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+};
 export default function About() {
+
+    const { t, i18n } = useTranslation();
+  const pathname = usePathname();
+  const [lang, setLang] = useState('en');
+
+  const isActive = (path) => (pathname === path ? 'active-link' : '');
+
+  const toggleLanguage = () => {
+    const newLang = lang === 'en' ? 'ar' : 'en';
+    setLang(newLang);
+    i18n.changeLanguage(newLang);
+  };
+
+
     const [formData, setFormData] = useState({
         email: '',
         subject: '',
         question: '',
         name: '',
     });
-
+    
     const [successMessage, setSuccessMessage] = useState(''); // New state for success message
 
     const handleChange = (e) => {
@@ -29,7 +48,7 @@ export default function About() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         try {
             const response = await fetch('https://api.bridgeit.site/api/question/add', {
                 method: 'POST',  
@@ -38,17 +57,17 @@ export default function About() {
                 },
                 body: JSON.stringify(formData),  
             });
-
+    
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-
+    
             const data = await response.json();
             console.log('Success:', data);
-
+    
             // Display success message
             setSuccessMessage('Your message has been sent successfully!');
-
+    
             // Reset form fields
             setFormData({
                 email: '',
@@ -56,7 +75,7 @@ export default function About() {
                 question: '',
                 name: '',
             });
-
+    
             // Clear success message after 3 seconds
             setTimeout(() => {
                 setSuccessMessage('');
@@ -65,39 +84,50 @@ export default function About() {
             console.error('Error:', error);
         }
     };
-
+    
     return (
         <div>
-            <Header />
-            <section className="about-headline text-dark">
+            <Navbar/>
                 <main className="main-sec">
                     <div className="main-text">
                         <h1>About our company</h1>
                         <h2>We believe project management should be as easy as working together—anywhere, anytime</h2>
                     </div>
                 </main>
-                <section className='container about-secondary'>
-                    <div className='head-text'>
-                        <h3>What we do</h3>
-                    </div>
-                    <div className='paragraph-text'>
-                        <p>At our core, we’re transforming how university students and supervisors manage and complete their projects. We understand that balancing multiple tasks, team communication, and academic deadlines can be overwhelming, so we’ve built a platform that simplifies every step of the process.</p>
-                        <p>
-                            With our platform, you can organize all your tasks and milestones in one place, ensuring that nothing slips through the cracks. Whether you’re working on a solo project or collaborating with a group, you’ll find tools that help you manage your workload more effectively. Our task organizer allows you to set clear priorities, assign tasks to team members, and track progress with ease.
-                        </p>
-                    </div>
-                </section>
-            </section>
-            <section className='about-sec-2'>
+            {/* </motion.section> */}
+            <motion.section 
+                className='container about-secondary'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInVariants}
+            >
+                <div className='head-text'>
+                    <h3>What we do</h3>
+                </div>
+                <div className='paragraph-text'>
+                    <p>At our core, we’re transforming how university students and supervisors manage and complete their projects. We understand that balancing multiple tasks, team communication, and academic deadlines can be overwhelming, so we’ve built a platform that simplifies every step of the process.</p>
+                    <p>
+                    With our platform, you can organize all your tasks and milestones in one place, ensuring that nothing slips through the cracks. Whether you’re working on a solo project or collaborating with a group, you’ll find tools that help you manage your workload more effectively. Our task organizer allows you to set clear priorities, assign tasks to team members, and track progress with ease.
+                    </p>
+                </div>
+            </motion.section>
+            <motion.section 
+                className='about-sec-2'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInVariants}
+            >
                 <div>
-                    <h2>People choose us because we serve the best for everyone</h2>
+                    <h2>People choose us because we serve the best for everyone </h2>
                 </div>
                 <div className="text-dark my-4 grid-container">
                     <div className="row grid-row">
                         <div className="box col-lg-5">
                             <div>
                                 <span>
-                                    <Image src='/Frame 57.png' alt='group icon' width={100} height={100} />
+                                    <img src='/Frame 57.png' alt='group icon'></img>
                                 </span>
                             </div>
                             <div>
@@ -108,7 +138,7 @@ export default function About() {
                         <div className="box col-lg-4">
                             <div>
                                 <span>
-                                    <Image src='/Frame 57-1.png' alt='shield-check' width={100} height={100} />
+                                    <img src='/Frame 57-1.png' alt='shield-check'></img>
                                 </span>
                             </div>
                             <div>
@@ -119,7 +149,7 @@ export default function About() {
                         <div className="box col-lg-5">
                             <div>
                                 <span>
-                                    <Image src='/Frame 57-2.png' alt='spark' width={100} height={100} />
+                                    <img src='/Frame 57-2.png' alt='spark'></img>
                                 </span>
                             </div>
                             <div>
@@ -130,7 +160,7 @@ export default function About() {
                         <div className="box col-lg-4">
                             <div>
                                 <span>
-                                    <Image src='/Frame 57-3.png' alt='globe' width={100} height={100} />
+                                    <img src='/Frame 57-3.png' alt='globe'></img>
                                 </span>
                             </div>
                             <div>
@@ -142,22 +172,26 @@ export default function About() {
                 </div>
                 <div className='bottom-sec-2 text-dark mt-5 mb-3'>
                     <div>
-                        <h4>Ready to take your project to the next level?</h4>
-                        <p>With all the tools and features you need in one place, you can manage your tasks, collaborate with your team, and stay organized—effortlessly. Start your project today and experience how simple project management can be.</p>
+                        <h4>Ready to take your  project to the next level?</h4>
+                        <p>With all the tools and features you need in one place, you can manage your tasks, collaborate with your team, and stay organized—effortlessly. Start your project today and experience how simple project management can be</p>
                     </div>
                     <div>
-                        <Link href='/signup'>
-                            <button className='btn start-2-btn fw-bold'>Start Now For Free</button>
-                        </Link>
+                        <button className='btn start-2-btn fw-bold'>Start Now For Free</button>
                     </div>
                 </div>
-            </section>
-            <section className="faq-about">
+            </motion.section>
+            <motion.section 
+                className="faq-about"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInVariants}
+            >
                 <h2 className='mt-5'>
-                    <span className="original-text">Frequently Asked Questions</span>
-                    <span className="responsive-text">FAQs</span>
-                </h2>
-                <div className="container mt-5 mb-5">
+                <span className="original-text">Frequently Asked Questions</span>
+                <span className="responsive-text">FAQs</span>
+            </h2>
+            <div className="container mt-5 mb-5">
                 <div className="accordion accordion-flush" id="accordionFlushExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header">
@@ -177,7 +211,7 @@ export default function About() {
                             </button>
                         </h2>
                         <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item&apos;s accordion body.</div>
+                            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item's accordion body.</div>
                         </div>
                     </div>
 
@@ -188,7 +222,7 @@ export default function About() {
                             </button>
                         </h2>
                         <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item&apos;s accordion body.</div>
+                            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body.</div>
                         </div>
                     </div>
 
@@ -226,14 +260,22 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            </section>
-            <section className='form-section'>
+            </motion.section>
+            <motion.section 
+                className='form-section'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeInVariants}
+            >
                 <div className="form-main container p-5">
                     <div className='form-block'>
                         <h2 className='mb-5'>Send a message</h2>
+                        
                         {/* Conditionally render success message */}
                         {successMessage && <div className="alert alert-success">{successMessage}</div>}
-                        <form onSubmit={handleSubmit}>
+                        
+                        <form id='helpcenter' onSubmit={handleSubmit}>
                             <div className='mb-3'>
                                 <label htmlFor="fullname" className="form-label mb-3">Full name</label>
                                 <input
@@ -288,11 +330,11 @@ export default function About() {
                         </form>
                     </div>
                     <div className='form-img'>
-                        <Image src='/form-img.png' alt="form illustration" width={500} height={300} />
+                        <img src='/form-img.png' alt="form illustration"/>
                     </div>
                 </div>
-            </section>
-            <Footer />
+            </motion.section>
+            <Footer/>
         </div>
     );
 }

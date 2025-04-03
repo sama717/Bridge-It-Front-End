@@ -8,9 +8,13 @@
     justify-content: center;
     align-items: center;
     color: white; 
-    text-align: center;
     margin-bottom: 100px;
   }
+  @media (max-width: 480px) {
+    .contact-us-background {
+        display: none;
+    }
+}
   .text-white {
     color: white;
   }
@@ -32,10 +36,10 @@
      font-size: 14px;
      text-align: center;
   }
-  .label{
+  .labell{
     color:#061C3D;
     font-weight: 400;
-    text-align: left;
+    text-align: left !important;
   }
   ::placeholder{
     color: #838E9E !important;

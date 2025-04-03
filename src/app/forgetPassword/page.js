@@ -12,7 +12,7 @@ export default function Home() {
   const [isOtpCorrect, setIsOtpCorrect] = useState(null); 
   const otpRequestSentRef = useRef(false);
   const isMountedRef = useRef(false);
-  const router = useRouter(); 
+  const router = useRouter();
 
   const sendOtpRequest = (email) => {
     const formData = new FormData();
@@ -32,13 +32,17 @@ export default function Home() {
           console.error("Error sending email:", data.message);
         }
       })
-      .catch((error) => console.error("API error:", error));
+      .catch((error) => {
+        console.error("API error:", error);
+        console.log("Error details:", error); // Additional logging for debugging
+      });
   };
 
   useEffect(() => {
     if (isMountedRef.current) {
       if (email && !otpSent && !otpRequestSentRef.current) {
         sendOtpRequest(email);
+        otpRequestSentRef.current = true; // Prevent multiple requests
       }
     }
   }, [email, otpSent]);
@@ -65,13 +69,16 @@ export default function Home() {
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = (event) => {
+    event.preventDefault(); 
+
     const otpToken = otp.join("");
     if (!otpToken || otpToken.length !== 4) {
       console.error("Invalid OTP");
-      setIsOtpCorrect(false); 
+      setIsOtpCorrect(false);
       return;
     }
+
     const formData = new FormData();
     formData.append("email", email);
     formData.append("token", otpToken);
@@ -82,97 +89,102 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.status) {
-          setIsOtpCorrect(true); 
-          router.push("./resetPassword"); 
+          setIsOtpCorrect(true);
+          router.push("./resetPassword");
         } else {
           setIsOtpCorrect(false);
           console.error("OTP verification failed:", data.message);
         }
       })
       .catch((error) => {
-        setIsOtpCorrect(false); 
+        setIsOtpCorrect(false);
         console.error("API error:", error);
       });
   };
 
   return (
-
     <div className="container">
-     
       <div className={styles.gridContainer}>
         <div className={styles.formContainer}>
-        <div className={styles.formConytent}>
-         <form>
-          <div className={styles.otpContainer}>
-            <div className={styles.otpbox}>
-              <div className="icon-container">
-                <div  className={styles.imagec}>
-               
-                  <img
-                    style={{ width: "120px" }}
-                    src={isOtpCorrect === null ? 'opt1.png' : isOtpCorrect ? 'opt1.png' : 'otp2.png'}
-                    alt="OTP Icon"
-                  />
+          <div className={styles.formConytent}>
+            <form>
+              <div className={styles.otpContainer}>
+                <div className={styles.otpbox}>
+                  <div className="icon-container">
+                    <div className={styles.imagec}>
+                      <img
+                        style={{ width: "120px" }}
+                        src={
+                          isOtpCorrect === null
+                            ? "opt1.png"
+                            : isOtpCorrect
+                            ? "opt1.png"
+                            : "otp2.png"
+                        }
+                        alt="OTP Icon"
+                      />
+                    </div>
+                  </div>
+                  <h2 className="fw-bold text-dark">OTP Verification</h2>
+                  <p
+                    style={{
+                      fontSize: ".8rem",
+                      fontWeight: "bold",
+                      color: "rgba(128, 128, 128,.9)",
+                    }}
+                  >
+                    We will send you a one-time password for this email
+                  </p>
+                  <p className="email fw-bold">{email}</p>
+
+                  <div className="otp-inputs">
+                    {otp.map((data, index) => (
+                      <input
+                        type="text"
+                        maxLength="1"
+                        key={index}
+                        value={data}
+                        onChange={(e) => handleChange(e.target, index)}
+                        onFocus={(e) => e.target.select()}
+                        className="otp-input"
+                      />
+                    ))}
+                  </div>
+
+                  <div className="resend">
+                    <span style={{ color: "#5d6672", fontWeight: "bold" }}>
+                      Did not receive the message?{" "}
+                    </span>
+                    <a
+                      style={{
+                        color: "#004ea0",
+                        fontWeight: "bold",
+                        marginRight: "10px",
+                      }}
+                      href="#"
+                      onClick={handleResend}
+                    >
+                      Resend
+                    </a>
+                    <span className="timer fw-bold">MM:SS</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="submit mt-5"
+                    onClick={handleConfirm}
+                  >
+                    Confirm
+                  </button>
                 </div>
               </div>
-              <h2 className="fw-bold text-dark">OTP Verification</h2>
-              <p
-                style={{
-                  fontSize: ".8rem",
-                  fontWeight: "bold",
-                  color: "rgba(128, 128, 128,.9)",
-                }}
-              >
-                We will send you a one-time password for this email
-              </p>
-              <p className="email fw-bold">{email}</p>
-
-              <div className="otp-inputs">
-                {otp.map((data, index) => (
-                  <input
-                    type="text"
-                    maxLength="1"
-                    key={index}
-                    value={data}
-                    onChange={(e) => handleChange(e.target, index)}
-                    onFocus={(e) => e.target.select()}
-                    className="otp-input"
-                  />
-                ))}
+              <div className="copyright">
+                All Copyrights go to Bridge It © 2024
               </div>
-
-              <div className="resend">
-                <span style={{ color: "#5d6672", fontWeight: "bold" }}>
-                  Did not receive the message?{" "}
-                </span>
-                <a
-                  style={{
-                    color: "#004ea0",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                  }}
-                  href="#"
-                  onClick={handleResend}
-                >
-                  Resend
-                </a>
-                <span className="timer fw-bold">MM:SS</span>
-              </div>
-
-              <button className="submit mt-5" onClick={handleConfirm}>
-                Confirm
-              </button>
-                 </div>
-                 
+            </form>
           </div>
-          
-          <div className="copyright" >
-          All Copyrights go to Bridge It © 2024
-        </div>      
-          </form>
-          
-        </div>
         </div>
 
         <div className={styles.imageContainer}>
@@ -186,10 +198,10 @@ export default function Home() {
                 />
               </div>
               <div style={{ display: "block" }}>
-                <div className="fw-bold ms-3 fs-3 " >
+                <div className="fw-bold ms-3 fs-3 ">
                   Start your journey with us!
                 </div>
-                <div className="fs-6 ms-3 " >
+                <div className="fs-6 ms-3 ">
                   Our mission is to simplify the management of university
                 </div>
                 <div className="fs-6 ms-3">
@@ -199,11 +211,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <style jsx>
-        {`
 
-
-.otp-container {
+        <style jsx>{`
+        .otp-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,8 +272,7 @@ p {
   margin-bottom: 20px;
   color: #505967;
 }
-        `}
-      </style>
+        `}</style>
       </div>
     </div>
   );

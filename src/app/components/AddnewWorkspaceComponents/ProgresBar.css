@@ -1,0 +1,81 @@
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 50%;
+  flex-direction: row;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex: 1;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: #C6C6C6;
+  margin-bottom: 20px;
+}
+
+.line.filled {
+  background: #1e88e5;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step.active .circle {
+  background: linear-gradient(to right, #002572, #007BFF);
+}
+
+.step.current .circle {
+  background: #fff;
+  border: 1px solid #004EA0;
+}
+
+.step.current .circle::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: #004EA0;
+  border-radius: 50%;
+}
+
+.step .circle .checkmark {
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  margin: auto;
+
+}
+
+span {
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.step.active span {
+  color: #374151;
+}
+
+@media (max-width:700px){
+  .progress-bar{
+    width: 80%;
+   margin-top: 60px;
+  }
+}
