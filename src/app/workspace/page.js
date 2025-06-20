@@ -2,7 +2,7 @@
 "use client";
 import Sidebar from '../components/workspaceComponents/sidebar';
 import Header from '../components/workspaceComponents/workspaceHeadre';
-import WorkspaceTabs from '../components/workspaceComponents/workspaceTaps';
+import WorkspaceTabs from '../components/workspaceComponents/workspacetaps';
 import WorkspaceGrid from '../components/workspaceComponents/workspaceGrid';
 import CustomPagination from '../components/workspaceComponents/pagination';
 import { Container, Button } from 'react-bootstrap';

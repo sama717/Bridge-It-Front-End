@@ -1,0 +1,20 @@
+.circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: inline-block;  
+    margin-right: 8px;  
+  }
+  .notificationbtn{
+    padding: 6px;
+    border: none;
+    font-size: 12px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #002572, #007BFF);
+    color: #FFFFFF;
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    
+  }

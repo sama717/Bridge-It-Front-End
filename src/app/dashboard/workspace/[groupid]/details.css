@@ -1,4 +1,4 @@
-.group-details-container {
+/* .group-details-container {
     background-color: white;
     padding: 24px;
     border-radius: 8px;
@@ -25,15 +25,16 @@
     border-radius: 50%;
     margin-right: 12px;
   }
+    */
 strong{
     color: #00000066;
     font-size: 14px;
 
-}  
+}   
 .more-btn {
   background: white;
   /* border: none; */
-  color: dark-gray;
+  color: darkgray;
   font-size: 1.1rem;
   position: absolute;
   top: 12px;
@@ -168,16 +169,28 @@ strong{
 }
 
 .share , .more-btn{
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   background-color:white;
   border-radius:20px;
   display:flex;
   justify-content:center;
-align-items:center;
-position: absolute;
- top:7%;
- right: 6%;
+  align-items:center;
+  position: absolute;
+  top:50%;
+  right: 6%;
+}
+.dots{
+  text-align: center;
+  font-size: 18px;
+}
+.documation{
+  background-color: white;
+  font-size: 12px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  border: none;
 }
 .more-btn{
   right: 1%;
@@ -232,7 +245,7 @@ position: absolute;
 
 .complete{
   width: 15%;
-  font-size: 1rem;
+  font-size: .5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -372,15 +385,28 @@ position: absolute;
   border-radius: inherit; 
 }
 .addNewTask{
-  background-color: #004EA0;
+  background: #004EA0;
   color: white;
- padding-left: 20px;
- padding-right: 20px;
+ padding-left: 15px;
+ padding-right: 15px;
  padding-top: 5px;
  padding-bottom: 5px;
  border: none;
  border-radius: 10px;
  margin-top: 10px;
+ font-size: 12px;
+ 
+}
+.urgency{
+  font-size: 14px;
+  
+
+}
+
+.urgency button{
+  background-color: transparent;
+  border: none;
+  color: #636E72;
 }
 
 .modalTitle{

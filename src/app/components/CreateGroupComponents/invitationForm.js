@@ -75,6 +75,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClone, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import "./invitationForm.css";
+import Link from "next/link";
 
 const Invitation = ({ groupId }) => {
   const [copied, setCopied] = useState(false);
@@ -133,9 +134,11 @@ const Invitation = ({ groupId }) => {
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <a href={inviteLink} target="_blank" rel="noopener noreferrer">
-          <button className="start formbtn">
+          <a href='/dashboard/workspace'>
+           <button className="start formbtn">
             Get Started <span className="text-light ">→</span>
-          </button>
+          </button></a>
+         
         </a>
       </div>
 

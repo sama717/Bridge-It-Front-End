@@ -2,10 +2,19 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import React, { useEffect, useState } from 'react';
+import './Nav.css';
 const Nav = () => {
-  const pathname = usePathname();
 
+  const pathname = usePathname();
+    const [showBox, setShowBox] = useState(false);
+
+    const handleNotificationClick = () => {
+      setShowBox(prev => !prev);
+    };
   const isActive = (path) => pathname === path ? 'active-link' : '';
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,7 +36,7 @@ const Nav = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
+   
     return (
         <nav className='nav-header'>
             <div className={`profile-info ${isExpanded && isMobile ? 'expanded' : ''}`}>
@@ -46,11 +55,16 @@ const Nav = () => {
                               <i className={`fa-solid ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
                           </div>
                   </button>
-                  <div className="notification-icon ps-4">
-                      <button>
-                          <i className="fa-regular fa-bell"></i>
-                      </button>
-                  </div>
+                 
+                  <div className="notification-icon ps-4" onClick={handleNotificationClick}>
+      <button >
+        <i className="fa-regular fa-bell" ></i>
+      </button>
+
+      {showBox && (
+        <div style={{ backgroundColor: 'red', width: '400px', height: '400px',marginTop:"200px" }}></div>
+      )}
+    </div>
                 </div>
 
                 {/* Additional content shown only when expanded */}
@@ -69,7 +83,7 @@ const Nav = () => {
                         </ul>
                       </div>
                       <div className='dropdown-block'>
-                        <Link href='/community' className={isActive('/community')}><i className="fas fa-users"></i><span> Community</span></Link>
+                        <Link href='/dashboard/community' className={isActive('/community')}><i className="fas fa-users"></i><span> Community</span></Link>
                       </div>
                       <div className='dropdown-block'>
                         <Link href='/support' className={isActive('/support')}><i className="fas fa-headset"></i> <span>Support</span></Link>
@@ -112,13 +126,46 @@ const Nav = () => {
               </select>
               <i class="fa-solid fa-chevron-down dropdown-icon"></i>
             </div>
-            <div className='notification-lang'>
-            <i class="fa-regular fa-bell"></i>
+            <div className='notification-lang'  >
+              <div onClick={handleNotificationClick}>
+                <i class="fa-regular fa-bell"  ></i>
+                {showBox && (
+        <div
+          style={{ position: 'fixed', top: "-6%", left: "64%", width: '100vw', height: '100vh',
+            display: 'flex',alignItems: 'center',zIndex: 9999
+          }}>
+          <div
+            style={{
+              backgroundColor: 'white', width: '350px', height: '400px',borderRadius:"10px",
+              boxShadow:"rgba(149, 157, 165, 0.2) 0px 8px 24px"
+            }}>
+              <div>
+              <p className='ms-3 mt-5' style={{color:"#374151"}}>Notifications</p>
+              <Container>
+      <Row className='mb-3'>
+        <Col> <span className="circle me-2"></span></Col>
+        <Col><button className='notificationbtn ms-5'>New</button></Col>
+      </Row>
+      <Row className='mb-3'>
+      <Col> <span className="circle me-2"></span></Col>
+      <Col><button className='notificationbtn ms-5'>New</button></Col>
+      </Row>
+      <Row className='mb-3'>
+      <Col> <span className="circle me-2"></span></Col>
+      <Col><button className='notificationbtn ms-5'>New</button></Col>
+      </Row>
+    </Container>
+              </div>
+             
+            </div>
+        </div>
+      )}
+              </div>
             <Link className='en-link' href='/'>
               <span>
-              <svg className="me-1" xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px">
+              <svg className="me-1" xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" >
                 <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" >
                     <stop offset="0.81%" style={{ stopColor: "#002572" }} />
                     <stop offset="96.35%" style={{ stopColor: "#007BFF" }} />
                   </linearGradient>

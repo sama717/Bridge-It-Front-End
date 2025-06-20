@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import { loginSuccess } from '../../store/authSlice'; 
-
+import Spinner from 'react-bootstrap/Spinner';
 const withAuth = (WrappedComponent) => {
   return (props) => {
     const router = useRouter();
@@ -25,7 +25,7 @@ const withAuth = (WrappedComponent) => {
       }
     }, [token, router, dispatch]);
 
-    if (isCheckingAuth) return <div>Loading...</div>;  
+    if (isCheckingAuth) return <div style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"50px"}} ><Spinner animation="border" /></div>;  
 
     return <WrappedComponent {...props} />;
   };

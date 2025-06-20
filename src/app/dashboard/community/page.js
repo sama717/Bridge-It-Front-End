@@ -1,0 +1,41 @@
+
+"use client";
+import { useEffect, useState } from "react";
+import Layout from "../../components/dashboardComponents/Layout";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Link from "next/link"; 
+import { useRouter } from "next/navigation";
+import CreatePostModal from "../../components/commuintyComponets/createPost";
+import Styles  from'./page.module.css'
+import { usePathname } from "next/navigation";
+export default function Community(){
+    const [showModal, setShowModal] = useState(false);
+    const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
+     const pathname = usePathname();
+         const basePath = pathname.split("/").slice(0, 4).join("/");
+    return(
+        <div>
+            <Layout>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+          <h4 style={{ color: "#374151", margin: 0 }}>Community</h4>
+            <div>
+         <button onClick={openModal} className={`${Styles.newpost} me-3`}> + New post</button>
+
+            <button className={Styles.profile}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 18C4 16.9391 4.42143 15.9217 5.17157 15.1716C5.92172 14.4214 6.93913 14 8 14H16C17.0609 14 18.0783 14.4214 18.8284 15.1716C19.5786 15.9217 20 16.9391 20 18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18Z" stroke="#004EA0" stroke-width="2" stroke-linejoin="round"/>
+           <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" stroke="#004EA0" stroke-width="2"/> </svg> My Profile</button>
+           </div>
+           </div>
+          <button className={`${Styles.post} me-3`}>Posts</button>
+          <Link href={`${basePath}/Docs`}>
+           <button className={`${Styles.docs} me-3`}>Docs</button></Link>
+         
+
+            </Layout>
+ 
+  {showModal && <CreatePostModal onClose={closeModal} />}
+        </div>
+    );
+}

@@ -15,12 +15,12 @@ export default function NotFound(){
                         <img src="/notfounfIcon.png" />
                         <h4 className="text-dark mt-3 fw-bold">Page not found</h4>
                         <p className="text-dark mt-3 fs-6 fw-bold">You can go back to the main page and start over</p>
-                        <Link href="/" style={{color:"#007BFF"}} >
+                        <a href="/" style={{color:"#007BFF"}} >
                             <div className="mt-5">
                                 <span>BACK TO THE MAIN PAGE</span> 
                                 <span style={{color:"#007BFF"}}>→</span>
                             </div>
-                        </Link>
+                        </a>
                     </Col>
                     <Col className="second-col">
                         <img src="/Notfound.png" />

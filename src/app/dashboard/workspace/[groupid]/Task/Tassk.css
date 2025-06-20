@@ -1,0 +1,127 @@
+.buttons {
+  display: flex;
+  gap: 12px; /* space between buttons */
+  /* Optional: align items vertically */
+  align-items: center;
+}
+
+
+
+.overview-btn{
+   background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+   font-size: 12px;
+height: 40;
+gap: 8px;
+border-radius: 8px;
+padding: 10px;
+color:white;
+border:none;
+
+}
+.challenge-btn{
+background: #F5FAFF;
+color:#4B5563;
+font-size: 12px;
+height: 40;
+gap: 8px;
+border-radius: 8px;
+padding: 10px;
+border:none;
+}
+
+.modalTitle{
+  color: #202020;
+  font-weight: bold;
+  font-size: 20px;
+}
+.modalLabel{
+  text-align: left;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #6B7280;
+}
+/* .buttons{
+  display: flex;
+  justify-content: space-around;
+} */
+.addTask , .cancleTask{
+  width: 45%;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.cancleTask{
+  background-color: #F5FAFF;
+  color: #004EA0;
+}
+.addTask{
+  background-color: #004EA0;
+  color: #F5FAFF;
+}
+.urgency{
+  font-size: 14px;
+  
+
+}
+
+.urgency button{
+  background-color: transparent;
+  border: none;
+  color: #636E72;
+}
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  transition: border-color 0.3s ease-in-out;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(90deg, #002572, #007BFF) border-box;
+}
+
+input[type="radio"]:checked {
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(90deg, #002572, #007BFF) border-box;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(90deg, #002572, #007BFF); 
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.modal-header .btn-close {
+  background-color: #E7E7E7; 
+  border-radius: 50%; 
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; 
+}
+
+.modal-header .btn-close:hover {
+  background-color: #d6d6d6; 
+}
+.area{
+  resize: none;
+}

@@ -1,0 +1,39 @@
+.newpost{
+height: 40px;
+padding: 6.111px 20px 6.111px 10px;
+color:#004EA0;
+border-radius: 5.689px;
+border: 1px solid #004EA0;
+background-color: white;
+font-size: 14px;
+}
+.profile{
+height: 40px;
+padding: 7.111px 20px 7.111px 16px;
+border-radius: 5.689px;
+background: var(--Secondar-V1, #F5F8FF);
+border: none;
+color: #004EA0;
+font-size: 14px;
+}
+.post{
+    
+padding: 10px ;
+border-radius: 8px;
+background: #004EA0;
+color: white;
+border: none;
+gap: 8px;
+align-self: stretch;
+font-size: 12px;
+}
+.docs{ 
+font-size: 12px;
+border-radius: 8px;
+background: var(--S1, #F5F8FF);
+border: none;
+padding: 10px ;
+color: #004EA0;
+gap: 8px;
+align-self: stretch;
+}

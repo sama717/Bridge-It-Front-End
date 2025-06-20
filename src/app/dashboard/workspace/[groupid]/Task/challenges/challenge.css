@@ -1,0 +1,87 @@
+.buttonss {
+  display: flex;
+  gap: 12px; /* space between buttons */
+  /* Optional: align items vertically */
+  align-items: center;
+}
+
+.overview-btn{
+background: #F5FAFF;
+color:#4B5563;
+font-size: 12px;
+height: 40;
+gap: 8px;
+border-radius: 8px;
+padding: 10px;
+border:none;
+
+}
+.challenge-btn{
+ background: linear-gradient(81.92deg, #002572 0.81%, #007BFF 96.35%);
+font-size: 12px;
+height: 40;
+gap: 8px;
+border-radius: 8px;
+padding: 10px;
+color:white;
+border:none;
+}
+.new-challenge{
+  background-color: white;
+  border: 1px #004EA0 solid;
+  color:#004EA0 ;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  top: 23%;
+  right: 3%;
+  font-size: 12px;
+}
+.modal-header .btn-close {
+  background-color: #E7E7E7; 
+  border-radius: 50%; 
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; 
+}
+.modal-dialog {
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  margin: 0; 
+  width: 100%;
+}
+.modalTitle{
+  color: #202020;
+  font-weight: bold;
+  font-size: 20px;
+}
+.modalLabel{
+  text-align: left;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+.addTask , .cancleTask{
+  width: 45%;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.cancleTask{
+  background-color: #F5FAFF;
+  color: #004EA0;
+}
+.addTask{
+  background-color: #004EA0;
+  color: #F5FAFF;
+}

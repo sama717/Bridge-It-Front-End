@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import LandingPage from './landingpage/page';
 import Dashboard from './dashboard/page';
-
 export default function HomePage() {
   const [token, setToken] = useState(null);
 

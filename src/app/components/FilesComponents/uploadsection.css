@@ -1,0 +1,10 @@
+.uploadbtn{
+    background-color: #004EA0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    width: 16%;
+    height: 35px;
+    font-weight: lighter;
+    font-size: 14px;
+}

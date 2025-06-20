@@ -1,0 +1,65 @@
+.taskhead{
+    background-color: white;
+    height: 40px;
+    border: 1px   #E5E7EB solid;
+    border-radius: 7px;
+    align-items: center;
+    color: #131313;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.taskCounter{
+    border: none;
+    border-radius: 50%;
+    background-color: #1313131A;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+}
+.addtask {
+  color: white;
+  border: none;
+  position: relative;
+  
+}
+.plussign{
+    position: absolute; 
+    top:-10px;
+    left:140px;
+    background-color: #F5FAFF;
+    color: #004EA0;
+    border: none;
+     width: 25px;
+    height: 25px;
+    font-size: 18px;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.tasktitle{
+    font-size: 14px;
+}
+.no-hover:hover,
+.no-hover:focus,
+.no-hover:active {
+  background-color: inherit !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+.toggleongoin{
+    background-color: #636E721A !important;
+    width: auto;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    color: #636E72;
+   border-radius:15px;
+}
+.Deadline{
+    font-size: 14px;
+    color: #FFA726;
+}

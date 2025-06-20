@@ -19,7 +19,7 @@ export default function Verfiction(){
             Your account has been created successfully check your Gmail
           </div>
           <p className='mt-3' style={{fontSize:"14px",textAlign:"center"}} >start your journey now,What you are waitig for!</p>
-          <Link href="#">
+          <Link href="/dashboard">
           <Button  type="submit "   className='mt-2 mb-3 submit' >
                   Take me home
                 </Button>

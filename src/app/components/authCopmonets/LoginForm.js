@@ -17,7 +17,7 @@ import { requestDeviceToken } from '../../../util/firebase.js';
 import { auth, googleProvider, githubProvider, facebookProvider } from '../../../util/firebase';
 import { signInWithPopup } from 'firebase/auth';
 
-export const dynamic = 'force-dynamic'; // Force dynamic behavior
+export const dynamic = 'force-dynamic'; 
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -28,9 +28,10 @@ export default function LoginForm() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Firebase-related code can run here
+    
     }
   }, []);
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -57,17 +58,25 @@ export default function LoginForm() {
       });
 
       if (!response.ok) {
+        if (response.status === 500) {
+          throw new Error('server error');
+        }
+      
         const errorData = await response.json();
         throw new Error(errorData.message || 'Login failed.');
       }
-
+      
       const data = await response.json();
       const user = data?.data?.user;
-      const token = data?.access_token;
+const token = data?.token?.access_token;
 
-      if (!user || !token) throw new Error("Invalid response structure.");
+if (!user || !token) {
+  console.error("Unexpected login response format:", data);
+  throw new Error("Invalid response structure.");
+}
 
-      dispatch(loginSuccess({ user, token, user_id: user.user_id, email: user.email }));
+dispatch(loginSuccess({ user, token, user_id: user.id, email: user.email }));
+
 
       if (rememberMe) {
         localStorage.setItem('token', token);
@@ -96,6 +105,7 @@ export default function LoginForm() {
 
   const handleCreateAccountClick = () => {
     router.push('/signup');
+    dispatch(loginFailure(null));  
   };
 
   return (
@@ -103,7 +113,7 @@ export default function LoginForm() {
       <form onSubmit={handleSubmit}>
         <h4 className="fw-bold mt-4 text-dark">Log in</h4>
 
-        <p className="fw-bold mt-4 mb-5" style={{ color: "#525252", fontSize: "12px" }}>
+        <p className="fw-bold mt-4 mb-3" style={{ color: "#525252", fontSize: "12px" }}>
           Don't have an account?{' '}
           <span 
             style={{ textDecoration: "underline", fontWeight: "bold", color: "#0b56a4", cursor: "pointer" }} 
@@ -113,7 +123,7 @@ export default function LoginForm() {
           </span>
         </p>
 
-        {error && <div style={{ color: 'red', marginBottom: '20px' }}>{error}</div>}
+        {error && <div style={{ color: 'red', marginBottom: '5px',fontSize:"14px" }}>{error}</div>}
 
         <div className="form-group email mb-4">
           <label htmlFor="email">Email</label>
@@ -174,7 +184,6 @@ export default function LoginForm() {
             <FontAwesomeIcon icon={faFacebook} style={{ color: "#1877f2", fontSize: "23px", marginLeft: "30px" }} />
           </span>
         </div>
-
         <div className="copyright">
           All Copyrights go to Bridge It © 2024
         </div>
