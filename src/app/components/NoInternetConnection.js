@@ -12,7 +12,7 @@ const NoInternetConnection = () => {
 
   return (
     <div className='internet-section'>
-      <div class="internet-block">
+      <div className="internet-block">
         <div className='internet-left'>
           <img src='/bridge-it-logo.png' className='mb-4'/>
           <h1 className='mb-3'>There is no Internet connection</h1>
