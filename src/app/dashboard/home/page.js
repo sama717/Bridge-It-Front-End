@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <Layout>
       {/* <h1>Home Page</h1> */}
-      <h4 style={{color:"grey"}}>Task Done</h4>
       <TaskDoneChart />
     </Layout>
   );

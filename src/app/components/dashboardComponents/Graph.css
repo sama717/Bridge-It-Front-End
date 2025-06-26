@@ -1,0 +1,17 @@
+.graph-parent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1.1em;
+}
+
+.graph-parent::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #E8EDF1;
+    z-index: 1;
+}

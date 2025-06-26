@@ -31,11 +31,13 @@
 // src/app/layout.js
 // src/app/layout.js (Server Component)
 
+// src/app/layout.js
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import './main.css';
 import React from 'react';
-import ReduxProvider from '../../src/app/components/ReduxProvider'; // ✅ Client component
+import ReduxProvider from '../../src/app/components/ReduxProvider';
+import InternetWrapper from '../../src/app/components/InternetWrapper'; // ✅ your new wrapper
 
 export const metadata = {
   title: 'Bridge it',
@@ -47,12 +49,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ReduxProvider>
-          {children}
+          <InternetWrapper>
+            {children}
+          </InternetWrapper>
         </ReduxProvider>
       </body>
     </html>
   );
 }
-
-
-
