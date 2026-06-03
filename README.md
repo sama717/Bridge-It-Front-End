@@ -1,7 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Bridge-It-FrontEnd
-The repo of the FrontEnd team. Helping each other to reach the goal and ease the difficulties.
+# BridgeIt — Bachelor Thesis
+
+This is the frontend repository for BridgeIt.
+
+BridgeIt is a web application built as a group project for students, researchers, and companies to manage group projects with ease.
+
+Documentation is made simpler too — reducing the time and effort involved by leveraging AI integration that generates documentation based on uploaded files, tasks, and basic onboarding steps.
 
 ## Getting Started
 
